@@ -1,0 +1,24 @@
+<div class="faixaItem">
+    <span class="textoFaixa"><strong>Excluir produto</strong>
+        <!-- <i class="material-icons iconeFaixa alinhamento">
+            shopping_cart
+        </i> -->
+    </span>
+</div>
+
+<mat-card class="container" fxLayoutAlign="center center">
+    <mat-card class="card mat-elevation-z0">
+        <mat-card-content class="alinhamento titulo"><b>{{produto.nome}}</b></mat-card-content>
+        <img mat-card-image class="foto alinhamento" src={{produto.foto}} alt="HB1">
+        <mat-card-content class="alinhamento"><b>{{produto.resumo}}</b></mat-card-content>
+        <mat-card-content class="preco alinhamento"><b>{{produto.preco | currency: 'BRL'}}</b></mat-card-content>
+        <mat-card-actions fxLayoutAlign="center center">
+            <button class="botaoCancel" mat-raised-button (click)="cancel()">
+                Cancelar
+            </button>
+            <button class="botaoOk " mat-raised-button (click)="deleteProduct()" color="warn">
+                Excluir
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</mat-card>

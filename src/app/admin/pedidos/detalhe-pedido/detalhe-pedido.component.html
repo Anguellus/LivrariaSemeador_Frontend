@@ -1,0 +1,131 @@
+<div class="faixaItem">
+    <span class="textoFaixa"><strong>Pedidos</strong>
+        <!-- <i class="material-icons iconeFaixa alinhamento">
+            shopping_cart
+        </i> -->
+    </span>
+</div>
+
+<mat-card class="mat-elevation-z0 cardCliente">
+    <mat-label><strong class="cliente">Cliente:</strong></mat-label>
+    <p></p>
+    <form fxLayout="row wrap" fxLayoutGap="20px">
+        <mat-form-field class="nomeField" floatLabel="always" appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput class="nomeInput" placeholder="Nome" [(ngModel)]="this.cliente.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline" class="endereco">
+            <mat-label>Endereço</mat-label>
+            <input matInput class="endereco" placeholder="Endereço" [(ngModel)]="this.cliente.endereco" name="endereco">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>Telefone</mat-label>
+            <input matInput placeholder="Telefone" [(ngModel)]="this.cliente.telefone" name="telefone">
+        </mat-form-field>
+        <mat-card-content class="botoes">
+            <button mat-raised-button (click)="voltar()" class="espacamento botaoVoltar">
+                Voltar
+            </button>
+            <button *ngIf="pedidos[0].status!='cancelado!'" mat-raised-button (click)="atualizar()"
+                class="espacamento botaoAtualizar">
+                Atualizar
+            </button>
+            <button *ngIf="pedidos[0].status!='cancelado!'" mat-raised-button (click)="apagarPedido()"
+                class="espacamento botaoApagar">
+                Apagar
+            </button>
+        </mat-card-content>
+    </form>
+</mat-card>
+
+<mat-card class="mat-elevation-z0 cardPagamento">
+    <mat-label><strong class="cliente">Pagamento:</strong></mat-label>
+    <p></p>
+    <mat-form-field floatLabel="always" appearance="outline">
+        <mat-label>Forma de pagamento</mat-label>
+        <input  matInput placeholder="Forma de Pagamento" [(ngModel)]="pedidos[0].formaPagamento" name="formaPagamento">
+    </mat-form-field>
+    <mat-form-field class="statusPagamento" floatLabel="always" appearance="outline">
+        <mat-label>Status do pagamento</mat-label>
+        <input  matInput placeholder="Status do pagamento" [(ngModel)]="pedidos[0].statusPagamento" name="statusPagamento">
+    </mat-form-field>
+</mat-card>
+
+<div class="conteudo">
+    <table mat-table [dataSource]="pedidos">
+
+        <ng-container matColumnDef="numero">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Número do pedido</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row">{{row._id}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="produtos">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Produtos</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row">
+                <table mat-table [dataSource]="produtos">
+                    <ng-container matColumnDef="nome">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Nome</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.nome}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="preco">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Preço</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.preco | currency: 'BRL'}}
+                        </td>
+                    </ng-container>
+                    <ng-container matColumnDef="quantidade">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Quantidade</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.quantidade}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="total_item">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Total Item</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.quantidade * row2.preco |
+                            currency: 'BRL'}}</td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="produtoDisplayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row2; columns: produtoDisplayedColumns"></tr>
+                </table>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="total_pedido">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Valor total</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row">{{row.totalPedido | currency: 'BRL'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataPedido">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Data do pedido</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row">{{row.dataPedido | date : 'dd/MM/yyyy HH:mm'}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataEntrega">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Data de entega</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row">{{row.dataEntrega | date : 'dd/MM/yyyy HH:mm'}}
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Status</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row">
+                <mat-form-field *ngIf="pedidos[0].status!='cancelado!'" appearance="fill">
+                    <mat-select [(value)]="this.statusSelected">
+                        <mat-option value="enviado">enviado</mat-option>
+                        <mat-option value="em andamento">em andamento</mat-option>
+                        <mat-option value="em preparação">em preparação</mat-option>
+                        <mat-option value="saiu para entrega">saiu para entrega</mat-option>
+                        <mat-option value="entregue!">entregue!</mat-option>
+                        <mat-option value="cancelado!">cancelado!</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field *ngIf="pedidos[0].status=='cancelado!'" appearance="fill">
+                    <mat-select [(value)]="this.statusSelected">
+                        <mat-option value="cancelado!">cancelado!</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr> -->
+    </table>
+</div>

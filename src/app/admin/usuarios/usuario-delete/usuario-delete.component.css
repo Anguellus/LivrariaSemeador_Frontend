@@ -1,0 +1,49 @@
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.nome {
+    width: 800px;
+}
+
+.email {
+    width: 600px;
+}
+
+.endereco {
+    width: 1000px;
+}
+
+button {
+    margin-right: 15px;
+    margin-top: 20px;
+    background-color: rgb(26, 26, 26);
+    border-width: 1px;
+    color: white
+}
+
+.cancelar {
+    background-color: rgb(234, 22, 34);
+    border-radius: 20px;
+}
+
+.apagar{
+    background-color: rgb(57, 136, 96);
+    border-radius: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+mat-card {
+    max-width: 65%;
+    margin: 1em auto;
+    text-align: center;
+    background-color:#343F56
+}
+
+mat-form-field {
+    display: block;
+    color: white;
+}

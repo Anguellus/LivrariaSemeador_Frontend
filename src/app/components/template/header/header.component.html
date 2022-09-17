@@ -1,0 +1,83 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale-1.0">
+    <title>Raposo Delivery</title>
+</head>
+<div class ="container" >
+    <!-- TOOLBAR DO LOGO -->
+    <mat-toolbar fxFlex="6" class="toolbar-logo">
+        <div>
+            <span>
+                <a routerLink="/">
+                    <img class="logo" src="assets/logo_raposo.jpg" alt="logo">
+                </a>
+            </span>
+        </div>
+    </mat-toolbar>
+    <!-- TOOLBAR MENU -->
+    <mat-toolbar class="toolbar-menu">
+        <div class="itensMenu primeiroItem" *ngIf="this.perfil == 'cliente'">
+            <a routerLink="/">
+                <i matTooltip="Menu" class="material-icons tamanhoIcone">fastfood</i>
+            </a>
+        </div>
+        <div>
+            <a *ngIf="qtdItens != 0" matBadge="{{qtdItens}}" matBadgeOverlap="true" matBadgePosition="after"
+                routerLink="/carrinho">
+                <i matTooltip="Carrinho de compras" class="material-icons tamanhoIcone">shopping_cart</i>
+            </a>
+            <a *ngIf="qtdItens == 0" routerLink="/carrinho">
+                <i matTooltip="Carrinho de compras" class="material-icons tamanhoIcone">shopping_cart</i>
+            </a>
+        </div>
+        <div class="itensMenu" *ngIf="this.perfil == 'cliente' && this.autenticado">
+            <a routerLink="/pedidos">
+                <i matTooltip="Pedidos" class="material-icons tamanhoIcone">reorder</i>
+            </a>
+        </div>
+        <div class="itensMenuAdmin" *ngIf="(this.perfil == 'admin' || this.perfil == 'master' ) && this.autenticado">
+            <a routerLink="/admin/produtos">
+                <i matTooltip="Produtos" class="material-icons tamanhoIcone">shopping_bag</i>
+            </a>
+        </div>
+        <div class="itensMenuAdmin" *ngIf="(this.perfil == 'admin' || this.perfil == 'master' ) && this.autenticado">
+            <a routerLink="/admin/pedidos">
+                <i matTooltip="Pedidos" class="material-icons tamanhoIcone">receipt</i>
+            </a>
+        </div>
+        <div class="itensMenuAdmin" *ngIf="(this.perfil == 'admin' || this.perfil == 'master' ) && this.autenticado">
+            <a routerLink="/admin/clientes">
+                <i matTooltip="Clientes" class="material-icons tamanhoIcone">perm_identity</i>
+            </a>
+        </div>
+        <div class="itensMenuAdmin" *ngIf="(this.perfil == 'master') && this.autenticado">
+            <a routerLink="/admin/usuarios">
+                <i matTooltip="Usuários" class="material-icons tamanhoIcone">manage_accounts</i>
+            </a>
+        </div>
+    </mat-toolbar>
+    <!-- TOOLBAR CONTATO -->
+    <mat-toolbar class="toolbar-contato">
+        <div><i><img class="logoWhats" src="assets/whatsapp-logo.png" alt="logo"></i>Contato (21) 965440024</div>
+    </mat-toolbar>
+
+    <!-- TOOLBAR BEM VINDO E LOGIN -->
+    <mat-toolbar class="toolbar-login" fxLayout="row" fxLayoutAlign="end center">
+        <div class="bemVindo" *ngIf="this.autenticado">
+            Bem vindo(a) {{this.nome}}
+        </div>
+        <div *ngIf="!this.autenticado && this.perfil == 'cliente'">
+            <button mat-raised-button (click)="login()" class="espacamento btnColor">
+                Log in
+            </button>
+            <button (click)="cadastro()" class="espacamento btnColor" mat-stroked-button>
+                Cadastro
+            </button>
+        </div>
+        <div *ngIf="this.autenticado">
+            <button (click)="sair()" class="espacamento btnColor" mat-raised-button>
+                Sair
+            </button>
+        </div>
+    </mat-toolbar>
+</div>

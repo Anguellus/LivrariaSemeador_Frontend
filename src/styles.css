@@ -1,0 +1,40 @@
+/* You can add global styles to this file, and also import other style files */
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* for sidenav to take a whole page */
+html, body { 
+    margin: 0;
+    height: 97%;
+    background: white;
+}
+.red {
+    color:red;
+}
+
+router-outlet{
+    padding-top: 16vh;
+}
+
+.v-middle{
+    vertical-align: middle;
+}
+
+.msg-success {
+    background-color: rgb(34, 69, 248);
+    color: white;
+}
+
+.msg-error {
+    background-color: red;
+    color: white;
+}
+
+/* 
+Verde original
+background-color: rgb(57, 136, 96);
+
+Azul */
+
+/* color:rgb(82,112,255); */

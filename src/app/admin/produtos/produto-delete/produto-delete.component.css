@@ -1,0 +1,113 @@
+.container {
+    /* align-content: center;
+    max-width: 50vh;
+    width: 50vh; */
+    background-color: white;
+    /* border-radius: 0cm;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px; */
+    
+  }
+
+  .containerBtn {
+    justify-content: space-between;
+    align-content: space-between;
+  }
+
+.botaoCancel { 
+  border-radius: 20px;
+  background-color: rgb(234, 22, 34);
+  /* border-style: solid;
+  border-width: 1px;
+  border-color: tomato; */
+  color: white;
+  text-align: center;
+}
+
+.botaoOk { 
+  background-color: rgb(57, 136, 96);
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+}
+  
+  .titulo {
+    font-size: 1.2em;
+  }
+  
+  .preco {
+    font-size: large;
+    font-style: italic;
+    font-weight: 500;
+    color:rgb(56, 72, 80);
+  }
+  
+  .card {
+    max-width: 200px;
+    background-color: white;
+    color: black;
+    align-content: center;
+    align-items: center;
+    /* flex-grow: 1;
+    border-width: 1px;
+    border-color: tomato;
+    border-style: ridge; */
+  }
+  
+  .foto{
+      width: 232px;
+  }
+    
+  .avatar {
+    background-size: cover;
+  }
+
+  .textoFaixa{
+    /* width: 100vh; */
+    font-size: x-large;
+    color: tomato;
+    /* border-bottom-style: solid; */
+    /* border-bottom-width: 1px; */
+    background-color: lightgray;
+    padding-left: 42%;
+    padding-right: 42%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    align-items: center;
+    /* margin-right: 4vh; */
+    /* background-color: lightgrey; */
+    border-radius: 5px;
+    border-color: lightgray; 
+    /* border-bottom-color: rgb(57, 136, 96); */
+}
+
+.iconeFaixa {
+    font-size: 40px;
+    color: black;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    background-color: none;
+}
+
+.faixaItem{
+    /* padding-top: 2vh; */
+    background-color: none;
+    height: 5vh;
+    font-weight: 500;
+    /* margin-left: 2vh; */
+    color: rgb(57, 136, 96);
+    vertical-align: middle;
+    text-align: center;
+    font-size: x-large;
+}
+
+mat-card-header{
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}

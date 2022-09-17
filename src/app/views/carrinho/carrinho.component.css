@@ -1,0 +1,338 @@
+table {
+    margin-top: 0px;
+    width: 98vh;
+    margin-left: 1vh;
+    margin-right: 1vh;
+    background-color:white;
+    color: rgb(82,112,255);
+}
+
+div {
+    text-align: center;
+}
+
+.tableVazia {
+    margin-top:2vh;
+}
+
+.center {
+    text-align: center;
+}
+
+th {
+    color: black;
+}
+
+td {
+    color: black;
+}
+
+.campos {
+    width: 14vh;
+}
+
+.valorTotal {
+    font-size: larger;
+    color: black;
+}
+
+.faixaItem{
+    padding-top: 2vh;
+    background-color: none;
+    height: 10vh;
+    font-weight: 500;
+    margin-left: 2vh;
+    color: rgb(82,112,255);
+    vertical-align: middle;
+    text-align: center;
+    font-size: x-large;
+}
+
+.textoFaixa{
+    /* width: 100vh; */
+    font-size: x-large;
+    color: rgb(82,112,255);
+    /* border-bottom-style: solid;
+    border-bottom-width: 1px; */
+    padding-left: 90vh;
+    padding-right: 90vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    /* margin-right: 4vh; */
+    /* background-color: lightgrey; */
+    /* border-radius: 5px;*/
+    /* border-color: #DA0037;  */
+    /* border-bottom-color: rgb(82,112,255); */
+}
+
+menu {
+    width: 50%;
+    background-color: rgb(82,112,255);
+}
+
+.iconeFaixa {
+    font-size: 40px;
+    color: black;
+}
+
+.container {
+    justify-content: center;
+    align-content: space-between;
+    width: 100%;
+}
+
+.tableProdutos {
+    /* margin-left: 4vh; */
+    width: 98vh;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-bottom: 1%;
+    /* padding-top: 10px; */
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: rgb(82,112,255);
+}
+
+.cabecalhoProd{
+    border-bottom-width: 0px;
+    border-bottom-color: rgb(82,112,255);
+    text-align: center;
+    font-size: larger;
+}
+
+th {
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(82,112,255);
+}
+
+ng-container{
+    padding-left: 2vh;
+    flex-wrap: wrap;
+}
+
+.mensagem {
+    font-size: larger;
+    text-align: center;
+}
+
+span {
+    font-size: 100px;
+}
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    background-color: none;
+}
+
+.btnAcoes { 
+    background-color:rgb(82,112,255);
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(82,112,255);
+    color: white;
+    border-radius: 20px;
+    padding-left: 15vh;
+    padding-right: 15vh;
+}
+
+button {
+    background-color: white;
+}
+
+.delete {
+    color: rgb(82,112,255);
+    text-align: right;
+    vertical-align: middle;
+}
+
+.add {
+    color: green;
+    padding-right: 1vh; 
+}
+
+.remove {
+    padding-left: 1vh;
+    color: red;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.precoTotal {
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    background-color: white;
+    color: rgb(82,112,255);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(82,112,255);
+}
+
+.formaPagamento {
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: rgb(82,112,255);
+    color: white;
+    border-style: solid;
+    font-weight: normal;
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: rgb(82,112,255);
+}
+
+.mat-option.mat-selected:not(.mat-option-multiple) {
+    color: white;
+    background-color: rgb(40, 68, 209);
+}
+
+:host  ::ng-deep .mat-select-value {
+    color: white;
+}
+
+mat-select-value{
+    background-color: blue;
+    color: tomato;
+}
+
+.selectForma{
+    padding-top: 1vh;
+    background-color: rgb(40, 68, 209);
+    border-radius: 20px;
+}
+
+/* FORMATAÇAO HANDSET */
+
+@media (max-width: 786px){
+    .naoHandset{
+        display: none;
+    }    
+}
+
+mat-card {
+    background-color: white;
+    color: black;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-align: center;
+}
+
+.iconeFaixaHandset {
+    font-size: 150%;
+    background-color: white;
+}
+
+
+.textoFaixaHandset{
+    width: 100%;
+    font-size: large;
+    color: rgb(82,112,255);
+    background-color: white;
+    border-color: rgb(82,112,255);
+    text-align: center;
+}
+
+.precoTotalHandset{
+    text-align: center;
+    font-size: large;
+    font-weight: bolder;
+    padding-top: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: rgb(82,112,255);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(82,112,255);
+    border-radius: 5px;
+    background-color: white;
+    vertical-align: center;
+}
+
+.btnAcoesHandset { 
+    background-color:rgb(82,112,255);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    padding-left: 20vh;
+    padding-right: 20vh;
+    border-color: rgb(82,112,255);
+    color: white;
+    margin-top: 10px;
+}
+
+.alinhamentoHandset {
+    text-align: center;
+    vertical-align: middle;
+    background-color: white;
+    color: rgb(82,112,255);
+  }
+
+  
+mat-table{
+    margin-right: 0;
+    padding-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.tableHandset {
+    margin: 0;
+    margin-right: 0;
+    padding: 0;
+    padding-right: 0;
+    margin-left: 0;
+    padding-left: 0;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    /* margin-left: 1vh;
+    margin-right: 1vh; */
+    background-color:white;
+    color: rgb(82,112,255);
+}
+
+.tableHandset thead {
+    margin: 0 ;
+    padding: 0;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+}
+.tableHandset body {
+    margin: 0 ;
+    padding: 0;
+    margin-left: 0;
+    padding-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.addHS {
+    color: green;
+    /* padding-right: 1vh;  */
+}
+
+.removeHS {
+    /* padding-left: 1vh; */
+    color: red;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.zerado{
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}

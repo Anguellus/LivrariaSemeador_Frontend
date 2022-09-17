@@ -1,0 +1,36 @@
+<mat-card class="mat-elevation-z2">
+    <mat-card-title>Criar cliente</mat-card-title>
+    <form [formGroup]="cadastroForm" fxLayout="row wrap" fxLayoutGap="20px">
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input formControlName="nome" matInput class="nome" placeholder="Nome" [(ngModel)]="cliente.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Sobrenome</mat-label>
+            <input formControlName="sobrenome" matInput class="sobrenome" placeholder="Sobrenome" [(ngModel)]="cliente.sobrenome" name="sobrenome">
+        </mat-form-field>
+        <mat-form-field class="email" appearance="outline" class="email">
+            <mat-label>E-mail</mat-label>
+            <input formControlName="email" type="email" matInput placeholder="E-mail" [(ngModel)]="cliente.email" name="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>CPF</mat-label>
+            <input formControlName="CPF" matInput placeholder="CPF" [(ngModel)]="cliente.CPF" name="CPF">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="endereco">
+            <mat-label>Endereço</mat-label>
+            <input formControlName="endereco" matInput class="endereco" placeholder="Endereço" [(ngModel)]="cliente.endereco" name="endereco">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Telefone</mat-label>
+            <input type="number" formControlName="telefone" matInput placeholder="Telefone" [(ngModel)]="cliente.telefone" name="telefone">
+        </mat-form-field>
+    </form>
+    <button mat-stroked-button (click)="cancelar()">
+        Cancelar
+    </button>
+    <button [disabled]="!cadastroForm.valid" class="btnSucesso" mat-raised-button (click)="createUser()">
+        Cadastrar
+    </button>
+{{cadastroForm.errors}}
+</mat-card>

@@ -1,0 +1,178 @@
+<div fxLayout="row" fxLayoutAlign="space-around center" class="tableVazia alinhamento naoHandset">
+    <table *ngIf="totalPedido == 0">
+        <th></th>
+        <td class="mensagem">
+            <strong>Seu carrinho está vazio!</strong>
+            <p>
+            </p>
+            <span class="material-icons">
+                remove_shopping_cart
+            </span>
+        </td>
+    </table>
+</div>
+<div *ngIf="totalPedido!= 0" class="faixaItem naoHandset">
+    <span class="textoFaixa"><strong>Carrinho</strong>
+        <i class="material-icons iconeFaixa alinhamento">
+            shopping_cart
+        </i>
+    </span>
+</div>
+<p></p>
+<div class="naoHandset">
+    <div class="container" fxLayout="row wrap" fxLayoutGap="20px">
+        <div>
+            <table class="tableProdutos" *ngIf="totalPedido!= 0" mat-table [dataSource]="pedido">
+                <ng-container matColumnDef="produtos">
+                    <th class="cabecalhoProd" mat-header-cell *matHeaderCellDef>Produtos</th>
+                    <td mat-cell *matCellDef="let row">
+                        <table mat-table [dataSource]="pedido[0].produtos">
+                            <!-- <mat-form-field>
+                            <img mat-card-image class="foto" src={{produto.foto}} alt="HB1">
+                        </mat-form-field> -->
+                            <ng-container matColumnDef="nome">
+                                <th class="alinhamento" mat-header-cell *matHeaderCellDef>Nome</th>
+                                <td class="alinhamento campos" mat-cell *matCellDef="let row2">{{row2.nome}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="preco">
+                                <th class="alinhamento"mat-header-cell *matHeaderCellDef>Preço</th>
+                                <td class="alinhamento campos" mat-cell *matCellDef="let row2">{{row2.preco | currency: 'BRL'}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="quantidade">
+                                <th class="alinhamento" mat-header-cell *matHeaderCellDef>Quantidade</th>
+                                <td class="alinhamento campos" mat-cell *matCellDef="let row2">
+                                    <button (click)="diminuirQtd(row2._id)" mat-icon-button>
+                                        <i class="material-icons remove">
+                                            remove
+                                        </i>
+                                    </button>
+                                    {{row2.quantidade}}
+                                    <button (click)="aumentarQtd(row2._id)" mat-icon-button>
+                                        <i class="material-icons add">
+                                            add
+                                        </i>
+                                    </button>
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="total_item">
+                                <th class="alinhamento" mat-header-cell *matHeaderCellDef>Total Item</th>
+                                <td class="alinhamento campos" mat-cell *matCellDef="let row2">{{row2.quantidade * row2.preco |
+                                    currency:
+                                    'BRL'}}
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="action">
+                                <th class="alinhamento" mat-header-cell *matHeaderCellDef>Ações</th>
+                                <td class="alinhamento campos" mat-cell *matCellDef="let row2">
+                                    <button mat-raised-button matTooltip="remover do carrinho" class="alinhamento"
+                                        (click)="removerItem(row2._id)" mat-icon-button>
+                                        <i class="material-icons delete">
+                                            delete
+                                        </i>
+                                    </button>
+                                </td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="produtoDisplayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row2; columns: produtoDisplayedColumns"></tr>
+                        </table>
+                    </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+
+        </div>
+        <div *ngIf="totalPedido != 0" class="finalizar">
+            <mat-card class="mat-elevation-z0">
+                <mat-card-content class="formaPagamento">
+                    Forma de pagamento:
+                    <mat-select class="selectForma" [(value)]="this.formaSelected">
+                        <mat-option value="Dinheiro">Dinheiro</mat-option>
+                        <mat-option value="Cartão de Crédito">Cartão de Crédito</mat-option>
+                    </mat-select>
+                </mat-card-content>
+                <mat-card-content class="precoTotal">
+                    <b>Valor total do pedido : </b><b class="valorTotal">{{totalPedido | currency: 'BRL'}}</b>
+                </mat-card-content>
+                <mat-card-content *ngIf="formaSelected != ''">
+                    <button class="btnAcoes" mat-raised-button (click)="finalizarPedido()">
+                        Pagamento
+                    </button>
+                    <!-- <button class="btnAcoesHandset" mat-raised-button (click)="realizarCobranca()">
+                        Checkout Stripe
+                    </button> -->
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<!-- TABELAS DO HANDSET -->
+<div *ngIf="(isHandset$ | async) && totalPedido!= 0" class="faixaItemHandset">
+    <span class="textoFaixaHandset"><strong>Carrinho</strong>
+        <i class="material-icons iconeFaixaHandset alinhamentoHandset">
+            shopping_cart
+        </i>
+    </span>
+</div>
+
+<!-- Handset -->
+<div *ngIf="(isHandset$ | async) && totalPedido!= 0">
+    <mat-card class="cardHandset mat-elevation-z0">
+        <mat-card-content>
+            <table class="tableHandset" mat-table [dataSource]="pedido[0].produtos">
+                <ng-container matColumnDef="nome">
+                    <th class="alinhamento" mat-header-cell *matHeaderCellDef>Produto</th>
+                    <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.nome}}</td>
+                </ng-container>
+                <ng-container matColumnDef="preco">
+                    <th class="alinhamento" mat-header-cell *matHeaderCellDef>Preço</th>
+                    <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.preco | currency: 'BRL'}}</td>
+                </ng-container>
+                <ng-container matColumnDef="quantidade">
+                    <th class="alinhamento" mat-header-cell *matHeaderCellDef>Qtd</th>
+                    <td class="alinhamento" mat-cell *matCellDef="let row2" fxLayout="column" fxLayoutAlign="center center">
+                        <button class="zerado" (click)="diminuirQtd(row2._id)" mat-icon-button>
+                            <i class="material-icons removeHS">
+                                remove
+                            </i>
+                        </button>
+                        {{row2.quantidade}}
+                        <button class="zerado" (click)="aumentarQtd(row2._id)" mat-icon-button>
+                            <i class="material-icons addHS">
+                                add
+                            </i>
+                        </button>
+                    </td>
+                </ng-container>
+                <ng-container matColumnDef="total_item">
+                    <th class="alinhamento" mat-header-cell *matHeaderCellDef>Total Item</th>
+                    <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.quantidade * row2.preco |
+                        currency: 'BRL'}}</td>
+                </ng-container>
+                <!-- <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef>Ações</th>
+                    <td mat-cell *matCellDef="let row2">
+                        <button mat-raised-button matTooltip="remover do carrinho" class="alinhamento"
+                            (click)="removerItem(row2._id)" mat-icon-button>
+                            <i class="material-icons delete">
+                                delete
+                            </i>
+                        </button>
+                    </td>
+                </ng-container> -->
+
+                <tr mat-header-row *matHeaderRowDef="produtoDisplayedColumnsHandset"></tr>
+                <tr mat-row *matRowDef="let row2; columns: produtoDisplayedColumnsHandset"></tr>
+            </table>
+            <p></p>
+            <mat-card-content class="precoTotalHandset">Valor do pedido: {{totalPedido | currency: 'BRL'}}
+            </mat-card-content>
+        </mat-card-content>
+    </mat-card>
+    <div *ngIf="isHandset$ | async">
+        <button class="btnAcoesHandset" mat-raised-button (click)="finalizarPedido()">
+            Pagamento
+        </button>
+    </div>
+    <p></p>
+</div>

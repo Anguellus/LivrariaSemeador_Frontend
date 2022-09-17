@@ -1,0 +1,17 @@
+.footer {
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: flex-end;
+    height: 5%;
+    background-image: linear-gradient(to right, rgb(180, 180, 180)  2%, rgb(59, 59, 59));
+}
+
+.footer span{
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+.contato{
+    font-size: small;
+}

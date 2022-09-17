@@ -1,0 +1,66 @@
+<div class="naoHandset">
+  <mat-card fxLayoutAlign="space-around center" fxLayout="row wrap" fxLayoutGap="3vh"
+    class="container mat-elevation-z0">
+    <mat-card fxFlex=" 0 1  calc (20% - 11px)" fxFlex.lt-md=" 0 1  calc(50% - 11px)" *ngFor="let item of produtos"
+      class="card mat-elevation-z0">
+      <mat-card-header class="cabecalho">
+        <!-- <div mat-card-avatar style="background-image: url('{{item.foto}}')" class="avatar"></div> -->
+        <!-- <mat-card-title class="titulo center">{{item.nome}}</mat-card-title> -->
+      </mat-card-header>
+      <p></p>
+      <mat-card-content>
+        <a routerLink="/detalheProduto/{{ item._id }}">
+          <img mat-card-image class="foto" src={{item.foto}} alt="HB1">
+        </a>
+      </mat-card-content>
+      <mat-card-content class="center nome">{{item.nome}}</mat-card-content>
+      <mat-card-actions class="center botaoadicionar">
+        <button *ngIf="item.estoque != 0" class="alinhamento" mat-raised-button matTooltip="adicionar ao carrinho"
+          (click)="incluir(item._id, item.nome, item.preco, item.idCobranca)">Adicionar ao carrinho
+          <i class="material-icons">add_shopping_cart</i>
+        </button>
+        <button *ngIf="item.estoque == 0" class="itemIndis" mat-raised-button>Produto indisponível
+          <i class="material-icons">highlight_off</i>
+        </button>
+      </mat-card-actions>
+      <mat-card-content *ngIf="item.estoque != 0" class="preco"><b>{{item.preco | currency: 'BRL'}}</b>
+      </mat-card-content>
+    </mat-card>
+  </mat-card>
+</div>
+
+<!-- DIV de exibição em HANDSET -->
+<div *ngIf="(isHandset$ | async)" class="handset">
+  <mat-card fxLayoutAlign="space-around center" fxLayout="row wrap" fxLayoutGap="1vh"
+    class="containerHS mat-elevation-z0">
+    <mat-card fxFlex=" 0 1  calc (20% - 11px)" fxFlex.lt-md=" 0 1  calc(50% - 11px)" *ngFor="let item of produtos"
+      class="card mat-elevation-z0">
+      <mat-card-header class="cabecalho">
+        <!-- <div mat-card-avatar style="background-image: url('{{item.foto}}')" class="avatar"></div> -->
+        <!-- <mat-card-title class="titulo center">{{item.nome}}</mat-card-title> -->
+      </mat-card-header>
+      <p></p>
+      <mat-card-content>
+        <a routerLink="/detalheProduto/{{ item._id }}">
+          <img mat-card-image class="fotoHS" src={{item.foto}} alt="HB1">
+        </a>
+      </mat-card-content>
+      <mat-card-content class="center nomeHS">{{item.nome}}</mat-card-content>
+      <mat-card-actions class="center botaoadicionar">
+        <button *ngIf="item.estoque != 0" class="alinhamento" mat-raised-button matTooltip="adicionar ao carrinho"
+          (click)="incluir(item._id, item.nome, item.preco, item.idCobranca)">
+          <i class="material-icons">add_shopping_cart</i>
+        </button>
+        <button *ngIf="item.estoque == 0" class="itemIndis" mat-raised-button>
+          <i class="material-icons">highlight_off</i>
+        </button>
+      </mat-card-actions>
+      <mat-card-content *ngIf="item.estoque != 0" class="preco"><b>{{item.preco | currency: 'BRL'}}</b>
+      </mat-card-content>
+    </mat-card>
+  </mat-card>
+</div>
+
+<!-- seletor para mostrar o botao de adicionar só se estiver logado
+    *ngIf="this.autenticado" 
+-->

@@ -1,0 +1,125 @@
+/* input outline color */
+:host  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: #Da0037;
+     /* opacity: 1!important; */
+  }
+  
+  /* mat-input focused color */
+  :host  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #Da0037;
+  } 
+
+mat-card {
+    width: 600px;
+    color: black;
+}
+
+mat-label {
+    color: black;
+}
+
+.cardFormat{
+    background-color: white;
+    border-radius: 5px;
+    border-color: tomato;
+    border-width: 1px;
+    border-style: solid;
+    color: black;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+button {
+    margin-right: 15px;
+    margin-top: 20px;
+    background-color:black;
+    border-radius:20px;
+}
+
+.btnCancelar {
+    margin-right: 15px;
+    margin-top: 20px;
+    background-color:rgb(234, 22, 34);
+    border-radius:20px;
+}
+
+.fotoslabel {
+    position: absolute;
+    left: 15px;
+    top: 170px;
+}
+
+.fotoslabel2 {
+    position: absolute;
+    left: 15px;
+    top: 200px;
+}
+
+.fotos {
+    position: absolute;
+    left: 135px;
+    top:170px
+}
+
+.fotos2 {
+    position: absolute;
+    left: 135px;
+    top:200px
+}
+
+.descricao {
+    width: 600px;
+}
+
+mat-card {
+    max-width: 95%;
+    margin: 1em auto;
+    text-align: center;
+    background-color:tomato;
+}
+
+.textoFaixa{
+    /* width: 100vh; */
+    font-size: x-large;
+    color: tomato;
+    /* border-bottom-style: solid; */
+    /* border-bottom-width: 1px; */
+    background-color: lightgray;
+    padding-left: 43%;
+    padding-right: 43%;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    align-items: center;
+    /* margin-right: 4vh; */
+    /* background-color: lightgrey; */
+    border-radius: 5px;
+    border-color: lightgray; 
+    /* border-bottom-color: rgb(57, 136, 96); */
+}
+
+.iconeFaixa {
+    font-size: 40px;
+    color: black;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    background-color: none;
+}
+
+.faixaItem{
+    /* padding-top: 2vh; */
+    background-color: none;
+    height: 5vh;
+    font-weight: 500;
+    /* margin-left: 2vh; */
+    color: rgb(57, 136, 96);
+    vertical-align: middle;
+    text-align: center;
+    font-size: x-large;
+}

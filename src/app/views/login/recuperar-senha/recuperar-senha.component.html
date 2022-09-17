@@ -1,0 +1,20 @@
+<mat-card class="mat-elevation-z0">
+    <mat-card-title>Recuperar senha
+        <i class="material-icons logIcon">
+            lock
+        </i>
+    </mat-card-title>
+    <form [formGroup]="cadastroForm">
+        <mat-form-field floatLabel="always" class="campos" appearance="outline">
+            <mat-label>
+                <i class="material-icons lockIcon">
+                    person_outline
+                </i>CPF
+            </mat-label>
+            <input formControlName="CPF" matInput placeholder="Digite seu CPF" [(ngModel)]="cpf" name="cpf">
+        </mat-form-field>
+    </form>
+    <button class="botao" [disabled]="!cadastroForm.valid" mat-raised-button (click)="recuperarSenha()" color="alert">
+        enviar
+    </button>
+</mat-card>

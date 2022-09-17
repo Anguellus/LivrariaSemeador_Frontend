@@ -1,0 +1,29 @@
+<mat-card class="mat-elevation-z2">
+    <mat-card-title>Apagar cliente</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input disabled matInput placeholder="Nome" [value]="cliente.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field>
+            <input disabled matInput placeholder="Sobrenome" [value]="cliente.sobrenome" name="sobrenome">
+        </mat-form-field>
+        <mat-form-field>
+            <input disabled matInput placeholder="e=mail" [value]="cliente.email" name="email">
+        </mat-form-field>
+        <mat-form-field>
+            <input disabled matInput placeholder="CPF" [value]="cliente.CPF" name="CPF">
+        </mat-form-field>
+        <mat-form-field>
+            <input disabled matInput placeholder="Endereço" [value]="cliente.endereco" name="endereco">
+        </mat-form-field>
+        <mat-form-field>
+            <input disabled matInput placeholder="Teleone" [value]="cliente.telefone" name="telefone">
+        </mat-form-field>
+    </form>
+    <button class="cancelar" mat-stroked-button (click)="cancelar()">
+        Cancelar
+    </button>
+    <button class="apagar" mat-raised-button (click)="deleteCliente()">
+        Apagar
+    </button>
+</mat-card>

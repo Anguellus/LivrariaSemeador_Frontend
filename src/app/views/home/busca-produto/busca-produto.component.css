@@ -1,0 +1,194 @@
+/* .background { */
+  /* background-image: url("./imagens/background.jpg"); */
+  /* width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to bottom, white 50%, #DA0037 100%);
+} */
+
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: grey;
+        /* opacity: 1!important; */
+    }
+  
+    .campoBusca{
+      padding-left: 1vh;
+      padding-right: 1vh;
+      padding-top: 2vh;
+      width: 40%;
+      vertical-align: middle;
+    }
+  
+    .inputBusca{
+      color: black;
+    }
+  
+    .iconeBusca{
+      color: black;
+      font-size: 300%;
+      vertical-align: middle;
+      padding-left: 0px;
+      margin-left: 0px;
+    }
+  
+    :host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+      padding: .25em;
+      margin-top: 5px;
+      padding-top: 0px;
+      margin-bottom: 10px;
+      padding-bottom: 0px;
+    }
+  
+    input::placeholder {
+      color:  rgb(82,112,255);
+      padding-left: 0px;
+      padding-top: 0px;
+      padding-bottom: 20px;
+      margin-top: 0;
+      margin-bottom: 0px;
+      background-color: none;
+      vertical-align: middle;
+  }
+  
+  .container {
+    justify-content: space-between;
+    align-content: space-between;
+    background-color: white;
+    border-radius: 0cm;
+    padding-left: 50px;
+    padding-right: 30px;
+    padding-top: 0px;
+    row-gap: 20px;
+    padding-bottom: 30px;
+  }
+
+  .containerHS {
+    /* justify-content: space-between;
+    align-content: space-between; */
+    background-color: white;
+    border-radius: 0cm;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0px;
+    row-gap: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .titulo {
+    font-size: 1.2em;
+  }
+  
+  .preco {
+    font-size: large;
+    text-align: center;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: white;
+    background-color: white;
+    border-width: 1px;
+    color:#DA0037;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(82,112,255);
+    color: white;
+    border-radius: 20px;
+  }
+  
+  .alinhamentoBusca{
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .center {
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .nome{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+
+  .nomeHS{
+    margin: 0;
+  }
+  
+  .card {
+    /* max-width: 20%; */
+    background-color: white;
+    color: black;
+    align-content: center;
+    align-items: center;
+    /* flex-grow: 1; */
+    /* border-width: 1px;
+    border-color: #DA0037;
+    border-style: solid; */
+  }
+
+  @media (max-width: 786px){
+    .naoHandset{
+        display: none;
+    }    
+  }
+    
+  .foto{
+      padding-top: 3vh;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      width: 30vh;
+      max-width: 30vh;
+      /* align-items: center; */
+      text-align: center;
+  }
+
+  .fotoHS{
+    padding-top: 1vh;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    width: 15vh;
+    max-width: 15vh;
+    /* align-items: center; */
+    text-align: center;
+  }
+  
+  .left {
+    text-align: left;
+  }
+    
+    .avatar {
+      background-size: cover;
+    }
+  
+    mat-card-content {
+      text-align: center;
+    }
+  
+  .botaoadicionar{
+   padding-top: 10px;
+   padding-bottom: 0px;
+  }
+  
+  .botaoIndisponivel{
+    padding-top: 10px;
+    padding-bottom: 0px;
+  }
+  
+  .botaoBusca{
+    background-color: white;
+    color: white;
+    /* border-radius: 20px; */
+    margin-left: 0px;
+    padding-left: 0px;
+  }
+  
+  .itemIndis {
+    text-align: center;
+    vertical-align: middle;
+    background-color: #DA0037;
+    color: white;
+    border-radius: 20px;
+  }

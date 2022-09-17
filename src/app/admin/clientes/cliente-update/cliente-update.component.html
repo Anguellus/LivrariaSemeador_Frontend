@@ -1,0 +1,83 @@
+<mat-card class="mat-elevation-z2">
+    <mat-card-title>Dados cadastrais</mat-card-title>
+    <form [formGroup]="cadastroForm" fxLayout="row wrap" fxLayoutGap="10px">
+        <mat-form-field appearance="outline">
+            <mat-label>Nome
+                <i class="material-icons iconeForm">
+                    perm_identity
+                </i>
+            </mat-label>
+            <input formControlName="nome" matInput placeholder="Nome" [(ngModel)]="cliente.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Sobrenome
+                <i class="material-icons iconeForm">
+                    perm_identity
+                </i>
+            </mat-label>
+            <input formControlName="sobrenome" matInput placeholder="Sobrenome" [(ngModel)]="cliente.sobrenome" name="sobrenome">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="email">
+            <mat-label>E-mail
+                <i class="material-icons iconeForm">
+                    email
+                </i>
+            </mat-label>
+            <input formControlName="email" type="email" matInput placeholder="E-mail" [(ngModel)]="cliente.email" name="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>CPF
+                <i class="material-icons iconeForm">
+                    123
+                </i>
+            </mat-label>
+            <input formControlName="CPF" matInput placeholder="CPF" [(ngModel)]="cliente.CPF" name="CPF">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="endereco">
+            <mat-label>Endereço
+                <i class="material-icons iconeForm">
+                    home_work
+                </i>
+            </mat-label>
+            <input formControlName="endereco" matInput placeholder="Endereço" [(ngModel)]="cliente.endereco" name="endereco">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Telefone
+                <i class="material-icons iconeForm">
+                    phone
+                </i>
+            </mat-label>
+            <input type="number" formControlName="telefone" matInput placeholder="Telefone" [(ngModel)]="cliente.telefone" name="telefone">
+        </mat-form-field>
+        <!-- <mat-form-field appearance="outline" *ngIf="this.perfil == 'cliente'">
+            <mat-label>Senha
+                <i class="material-icons iconeForm">
+                    lock_open
+                </i>
+            </mat-label>
+            <input type="password" formControlName="password" matInput placeholder="Senha" [(ngModel)]="password" name="password">
+        </mat-form-field>
+        <mat-form-field appearance="outline" *ngIf="this.perfil == 'cliente'">
+            <mat-label>Repita a senha
+                <i class="material-icons iconeForm">
+                    lock
+                </i>
+            </mat-label>
+            <input formControlName="checkPassword" type="password" matInput placeholder="Repita a senha" [(ngModel)]="checkPassword" name="checkPassword">
+        </mat-form-field> -->
+    </form>
+    <button class="botao" *ngIf="this.perfil == 'cliente'" [disabled]="!cadastroForm.valid" mat-raised-button (click)="updateCliente()">
+        Atualizar
+    </button>
+    <button class="botao" *ngIf="this.perfil != 'cliente'" mat-raised-button (click)="updateCliente()">
+        Atualizar
+    </button>
+    <!-- <p></p> -->
+    <button class="cancelar" mat-stroked-button (click)="cancelar()">
+        Cancelar
+    </button>
+    <p></p>
+    <a *ngIf="this.perfil == 'cliente'" routerLink="/trocarSenha/{{ cliente.CPF }}" class="atualizarSenha">
+        Atualizar senha
+    </a>
+</mat-card>

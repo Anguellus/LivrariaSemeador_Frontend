@@ -1,0 +1,91 @@
+table {
+    margin-top: 10px;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color:white;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(57, 136, 96);
+    padding: 1px;
+}
+
+.conteudo {
+    padding-bottom: 30px;
+}
+
+th {
+    color:rgb(57, 136, 96);
+    border-bottom: rgb(57, 136, 96);
+    border-bottom-width: 1px;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+td {
+    color:black;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    color:white
+}
+
+.botao { 
+    margin-top: 10px;
+    margin-left: 13px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(57, 136, 96);
+    color: rgb(57, 136, 96);
+}
+
+.textoFaixa{
+    /* width: 100vh; */
+    font-size: x-large;
+    color: rgb(57, 136, 96);
+    /* border-bottom-style: solid; */
+    /* border-bottom-width: 1px; */
+    background-color: lightgray;
+    padding-left: 100vh;
+    padding-right: 100vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    align-items: center;
+    /* margin-right: 4vh; */
+    /* background-color: lightgrey; */
+    border-radius: 5px;
+    border-color: lightgray; 
+    /* border-bottom-color: rgb(57, 136, 96); */
+}
+
+.iconeFaixa {
+    font-size: 40px;
+    color: black;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    background-color: none;
+}
+
+.faixaItem{
+    /* padding-top: 2vh; */
+    background-color: none;
+    height: 5vh;
+    font-weight: 500;
+    /* margin-left: 2vh; */
+    color: rgb(57, 136, 96);
+    vertical-align: middle;
+    text-align: center;
+    font-size: x-large;
+}

@@ -1,0 +1,202 @@
+table {
+    margin-top: 0px;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color:rgb(57, 136, 96);
+}
+.cliente {
+    font-size: large;
+    color: rgb(57, 136, 96);
+}
+
+.botoes{
+    padding-top: 10px;
+}
+
+.nomeField{
+    width: 40vh
+}
+
+.statusPagamento{
+    margin-left: 3vh;
+}
+
+.cardCliente{
+    margin-top: 10px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    width: max-content;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-right: 10px;
+    background-color:white;
+    color: black;
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(57, 136, 96); */
+}
+
+.cardPagamento{
+    margin-top: 0px;
+    padding-top: 0px;
+    width: max-content;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding-right: 10px;
+    background-color:white;
+    color: black;
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(57, 136, 96); */
+}
+
+mat-label {
+    color: black;
+}
+
+:host  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: rgb(57, 136, 96);
+     /* opacity: 1!important; */
+  }
+  
+  /* mat-input focused color */
+:host  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: rgb(57, 136, 96);
+  } 
+
+.conteudo {
+    padding-bottom: 30px;
+}
+
+th {
+    color:white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+td {
+    color:white;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    color:white
+}
+
+.botao { 
+    margin-top: 10px;
+    border: 0;
+    margin: 0;
+    margin-left: 10px;
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(57, 136, 96);
+    color: black;
+}
+
+.botaoVoltar{
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 0;
+    margin: 0;
+    margin-left: 10px;
+    border-radius: 20px;
+    background-color: gray;
+    /* border-style: solid; */
+    /* border-width: 1px;
+    border-color: rgb(57, 136, 96); */
+    color: white;
+}
+
+.botaoAtualizar{
+    margin-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 0;
+    margin: 0;
+    margin-left: 10px;
+    border-radius: 20px;
+    background-color: rgb(57, 136, 96);
+    /* border-style: solid; */
+    /* border-width: 1px;
+    border-color: rgb(57, 136, 96); */
+    color: white;
+}
+
+.botaoApagar{
+    margin-top: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 0;
+    margin: 0;
+    margin-left: 10px;
+    border-radius: 20px;
+    background-color: red;
+    /* border-style: solid; */
+    /* border-width: 1px;
+    border-color: rgb(57, 136, 96); */
+    color: white;
+}
+
+.edit > i {
+    margin-right:10px;
+}
+
+.edit > i {
+    color: #d9cd26;
+}
+
+.delete > i {
+    color: #ff6e7d
+}
+
+.textoFaixa{
+    /* width: 100vh; */
+    font-size: x-large;
+    color: rgb(57, 136, 96);
+    /* border-bottom-style: solid; */
+    /* border-bottom-width: 1px; */
+    background-color: lightgray;
+    padding-left: 100vh;
+    padding-right: 100vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    align-items: center;
+    /* margin-right: 4vh; */
+    /* background-color: lightgrey; */
+    border-radius: 5px;
+    border-color: lightgray; 
+    /* border-bottom-color: rgb(57, 136, 96); */
+}
+
+.iconeFaixa {
+    font-size: 40px;
+    color: black;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    background-color: none;
+}
+
+.faixaItem{
+    /* padding-top: 2vh; */
+    background-color: none;
+    height: 5vh;
+    font-weight: 500;
+    /* margin-left: 2vh; */
+    color: rgb(57, 136, 96);
+    vertical-align: middle;
+    text-align: center;
+    font-size: x-large;
+}

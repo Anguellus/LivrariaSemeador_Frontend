@@ -1,0 +1,41 @@
+mat-card {
+    max-width: 65%;
+    margin: 1em auto;
+    text-align: center;
+    background-color:#343F56;
+}
+
+.nome {
+    width: 800px;
+}
+
+.email {
+    width: 400px;
+}
+
+.endereco {
+    width: 842px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    color: white;
+}
+
+button {
+    margin-right: 15px;
+    margin-top: 20px;
+    background-color:rgb(234, 22, 34);
+    border-radius: 20px;
+}
+
+.btnSucesso {
+    margin-right: 15px;
+    margin-top: 20px;
+    background-color: rgb(57, 136, 96);
+    border-radius: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+}

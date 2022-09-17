@@ -1,0 +1,88 @@
+<div class="naoHandset">
+    <table class="alinhamento" *ngIf="pedidos.length == 0 && this.autenticado">
+        <th></th>
+        <td>Você ainda não realizou pedidos</td>
+    </table>
+</div>
+<div class="naoHandset">
+    <table class="alinhamento" *ngIf="!this.autenticado">
+        <th></th>
+        <td>Para ver os seus pedidos realizados é necessário estar logado</td>
+    </table>
+</div>
+
+<div class="faixaItem naoHandset">
+    <span class="textoFaixa"><strong>Pedidos</strong>
+        <i class="material-icons iconeFaixa alinhamento">
+            receipt
+        </i>
+    </span>
+</div>
+
+<div class="naoHandset">
+    <table class="mat-elevation-z0 divPrincipal" *ngIf="pedidos.length != 0" mat-table [dataSource]="pedidos">
+
+        <ng-container matColumnDef="numero">
+            <th mat-header-cell *matHeaderCellDef>Número do pedido</th>
+            <td mat-cell *matCellDef="let row">
+                <a routerLink="/pedidos/detalhe/{{ row._id }}"><b>{{row._id}}</b></a>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="total_pedido">
+            <th mat-header-cell *matHeaderCellDef>Valor total</th>
+            <td mat-cell *matCellDef="let row">{{row.totalPedido | currency: 'BRL'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataPedido">
+            <th mat-header-cell *matHeaderCellDef>Data do pedido</th>
+            <td mat-cell *matCellDef="let row">{{row.dataPedido | date : 'dd/MM/yyyy HH:mm'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataEntrega">
+            <th mat-header-cell *matHeaderCellDef>Data de entega</th>
+            <td mat-cell *matCellDef="let row">{{row.dataEntrega | date : 'dd/MM/yyyy HH:mm'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let row"><strong>{{row.status}}</strong></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+</div>
+
+<div *ngIf="isHandset$ | async" class="faixaItemHandset">
+    <span class="textoFaixaHandset"><strong>Pedidos</strong>
+        <i class="material-icons iconeFaixaHandset alinhamentoHandset">
+            receipt
+        </i>
+    </span>
+</div>
+
+<div *ngIf="isHandset$ | async">
+    <table class="mat-elevation-z0 divPrincipal" *ngIf="pedidos.length != 0" mat-table [dataSource]="pedidos">
+
+        <ng-container matColumnDef="total_pedido">
+            <th mat-header-cell *matHeaderCellDef>Valor total</th>
+            <td mat-cell *matCellDef="let row">{{row.totalPedido | currency: 'BRL'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataPedido">
+            <th mat-header-cell *matHeaderCellDef>Data do pedido</th>
+            <td mat-cell *matCellDef="let row">
+                <a class="link" routerLink="/pedidos/detalhe/{{ row._id }}">{{row.dataPedido | date : 'dd/MM/yyyy HH:mm'}}</a>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let row"><strong>{{row.status}}</strong></td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsHandSet"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsHandSet"></tr>
+    </table>
+</div>

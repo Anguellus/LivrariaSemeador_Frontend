@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-title>Login Administrativo</mat-card-title>
+    <form (keyup.enter)="login()">
+        <mat-form-field appearance="outline">
+            <mat-label>
+                <i class="material-icons lockIcon">
+                    person_outline
+                </i>Usuário
+            </mat-label>
+            <input matInput placeholder="usuário" [(ngModel)]="usuarioForm.usuario" name="usuario">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label> 
+                <i class="material-icons lockIcon">
+                    lock
+                </i>
+                Senha
+            </mat-label>
+            <input matInput placeholder="Senha" type="password" [(ngModel)]="usuarioForm.password" name="senha">
+        </mat-form-field>
+    </form>
+    <button class="botao" mat-raised-button (click)="login()">
+        Log in
+    </button>
+</mat-card>

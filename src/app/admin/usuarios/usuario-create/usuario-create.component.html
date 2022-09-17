@@ -1,0 +1,30 @@
+<mat-card class="mat-elevation-z2">
+    <mat-card-title>Criar novo usuário</mat-card-title>
+    <form fxLayout="row wrap" fxLayoutGap="20px">
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome" [(ngModel)]="usuario.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="usuario">
+            <mat-label>Usuário</mat-label>
+            <input matInput placeholder="Usuário" [(ngModel)]="usuario.usuario" name="usuario">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input matInput placeholder="Password" [(ngModel)]="usuario.password" name="password">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Perfil Master</mat-label>
+            <mat-select placeholder="Master" [(value)]="usuario.master">
+                <mat-option value=false>Não</mat-option>
+                <mat-option value=true>Sim</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <button class="cancelar" mat-stroked-button (click)="cancelar()">
+        Cancelar
+    </button>
+    <button class="btnSucesso" mat-raised-button (click)="createUser()">
+        Cadastrar
+    </button>
+</mat-card>

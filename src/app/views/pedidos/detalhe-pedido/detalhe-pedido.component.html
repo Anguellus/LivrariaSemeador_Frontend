@@ -1,0 +1,170 @@
+<!-- <div class="naoHandset">
+    <table class="conteudo" mat-table [dataSource]="pedidos">
+
+        <ng-container  matColumnDef="numero">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Número do pedido</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row"><b>{{row._id}}</b></td>
+        </ng-container>
+         
+        <ng-container matColumnDef="produtos">
+            <th class="alinhamento " mat-header-cell *matHeaderCellDef>Produtos</th>
+            <td class="alinhamento bordaLateral" mat-cell *matCellDef="let row">
+                <table mat-table [dataSource]="produtos">
+                    <ng-container matColumnDef="nome">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Nome</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.nome}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="preco">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Preço</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.preco | currency: 'BRL'}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="quantidade">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Quantidade</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.quantidade}}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="total_item">
+                        <th class="alinhamento" mat-header-cell *matHeaderCellDef>Total Item</th>
+                        <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.quantidade * row2.preco | currency: 'BRL'}}</td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="produtoDisplayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row2; columns: produtoDisplayedColumns"></tr>
+                </table>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="total_pedido">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Valor total</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row">{{row.totalPedido | currency: 'BRL'}}</td>
+        </ng-container>
+        
+        <ng-container matColumnDef="dataPedido">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Data do pedido</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row">{{row.dataPedido | date : 'dd/MM/yyyy HH:mm'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataEntrega">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Data de entega</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row">{{row.dataEntrega | date : 'dd/MM/yyyy HH:mm'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th class="alinhamento" mat-header-cell *matHeaderCellDef>Status</th>
+            <td class="alinhamento" mat-cell *matCellDef="let row">{{row.status}}</td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr> -->
+<!-- </table>
+    <div>
+        <div class="www">
+            Forma de pagamento: {{this.pedidos[0].formaPagamento}}
+        </div>
+        <div class="www">
+            Status do pagamento: {{this.pedidos[0].statusPagamento}}
+        </div>
+    </div> -->
+<!-- </div> -->
+<div class="naoHandset">
+    <div fxLayoutAlign="start stretch" fxLayout="row wrap">
+        <mat-card fxLayoutAlign="space-between center" fxLayout="row wrap" fxLayoutGap="20px" class="mat-elevation-z0">
+            <mat-card class="mat-elevation-z0">
+                <mat-card-content class="numPed nome"><b>Número do pedido:</b> {{pedido._id}}</mat-card-content>
+                <mat-card-content class="nome"><b>Data do pedido:</b> {{pedido.dataPedido | date : 'dd/MM/yyyy HH:mm'}}
+                </mat-card-content>
+                <mat-card-content class="nome"><b>Forma de pagamento:</b> {{pedido.formaPagamento}}</mat-card-content>
+                <mat-card-content class="nome"><b>Status do pagamento:</b> {{pedido.statusPagamento}}</mat-card-content>
+                <mat-card-content class="nome"><b>Total do pedido:</b> {{pedido.totalPedido | currency: 'BRL'}}
+                </mat-card-content>
+                <mat-card-content class="nome"><b>Data de entrega:</b> {{pedido.dataEntrega | date : 'dd/MM/yyyy
+                    HH:mm'}}</mat-card-content>
+            </mat-card>
+        </mat-card>
+        <mat-card fxLayoutAlign="space-between stretch" fxLayout="row wrap" fxLayoutGap="20px"
+            class="cardProdutos mat-elevation-z0">
+            <mat-card class=" subCardProdutos mat-elevation-z0">
+                <mat-card-content class="center ">
+                    <mat-card-content class="tituloProdutos">Produtos</mat-card-content>
+                    <ng-container>
+                        <table class="tableProd" mat-table [dataSource]="pedido.produtos">
+                            <ng-container matColumnDef="nome">
+                                <th class="alinhamento" mat-header-cell *matHeaderCellDef>Nome</th>
+                                <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.nome}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="preco">
+                                <th class="alinhamento" mat-header-cell *matHeaderCellDef>Preço</th>
+                                <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.preco | currency: 'BRL'}}
+                                </td>
+                            </ng-container>
+                            <ng-container matColumnDef="quantidade">
+                                <th class="alinhamento" mat-header-cell *matHeaderCellDef>Quantidade</th>
+                                <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.quantidade}}</td>
+                            </ng-container>
+                            <ng-container matColumnDef="total_item">
+                                <th class="alinhamento" mat-header-cell *matHeaderCellDef>Total Item</th>
+                                <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.quantidade * row2.preco |
+                                    currency: 'BRL'}}</td>
+                            </ng-container>
+                            <tr mat-header-row *matHeaderRowDef="produtoDisplayedColumns"></tr>
+                            <tr mat-row *matRowDef="let row2; columns: produtoDisplayedColumns"></tr>
+                        </table>
+                    </ng-container>
+                </mat-card-content>
+            </mat-card>
+        </mat-card>
+    </div>
+</div>
+
+<div *ngIf="isHandset$ | async">
+    <mat-card class="cardHandset">
+        <mat-card-header class="cabecalho">
+            <mat-card-title class="titulo center">Pedido: {{this.pedido._id}}</mat-card-title>
+        </mat-card-header>
+        <p></p>
+        <mat-card-content><b>Data do pedido:</b> {{this.pedido.dataPedido | date : 'dd/MM/yyyy
+            HH:mm'}}
+        </mat-card-content>
+        <mat-card-content><b>Data de entrega:</b> {{this.pedido.dataEntrega | date : 'dd/MM/yyyy
+            HH:mm'}}
+        </mat-card-content>
+        <mat-card-content><b>Forma de pagamento:</b> {{this.pedido.formaPagamento}}
+        </mat-card-content>
+        <mat-card-content><b>Status do pagamento:</b> {{pedido.statusPagamento}}
+        </mat-card-content>
+        <mat-card-content><b>Status do pedido: </b>{{this.pedido.status}}</mat-card-content>
+        <mat-card-content>
+            <table mat-table [dataSource]="produtos">
+                <ng-container matColumnDef="nome">
+                    <th class="alinhamento" mat-header-cell *matHeaderCellDef>Nome</th>
+                    <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.nome}}</td>
+                </ng-container>
+                <ng-container matColumnDef="preco">
+                    <th class="alinhamento" mat-header-cell *matHeaderCellDef>Preço</th>
+                    <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.preco | currency: 'BRL'}}</td>
+                </ng-container>
+                <ng-container matColumnDef="quantidade">
+                    <th class="alinhamento" mat-header-cell *matHeaderCellDef>Quantidade</th>
+                    <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.quantidade}}</td>
+                </ng-container>
+                <ng-container matColumnDef="total_item">
+                    <th class="alinhamento" mat-header-cell *matHeaderCellDef>Total Item</th>
+                    <td class="alinhamento" mat-cell *matCellDef="let row2">{{row2.quantidade * row2.preco |
+                        currency: 'BRL'}}</td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="produtoDisplayedColumns"></tr>
+                <tr mat-row *matRowDef="let row2; columns: produtoDisplayedColumns"></tr>
+            </table>
+            <mat-card-content class="totalPedidoHS">Total do pedido: {{this.pedido.totalPedido | currency: 'BRL'}}
+            </mat-card-content>
+        </mat-card-content>
+    </mat-card>
+</div>
+
+<p></p>
+<div>
+    <button class="botao" mat-raised-button (click)="voltar()">
+        Voltar
+    </button>
+    <button *ngIf="pedido.statusPagamento != 'Pago'" class="botaoPagamento" mat-raised-button (click)="reenviarLinkPagamento()">
+        Pagar
+    </button>
+</div>

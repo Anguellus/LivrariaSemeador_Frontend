@@ -1,0 +1,218 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <!-- INÍCIO MENU LATERAL HANDSET -->
+    <div class="espacoLateral" fxLayout="column" fxLayoutAlign="space-between center">
+      <div class="divMenuLateral">
+        <mat-toolbar class="titulo-Sidenav" id="menuLateral" fxLayoutAlign="center center">
+          <img class="logoSidenav" src="assets/livraria semeador_azul.png" alt="logo">
+        </mat-toolbar>
+      </div>
+      <div class="menuSidenavBody" fxFlex="100" fxLayout="column" fxLayoutAlign="start start">
+        <mat-nav-list>
+          <a class="textoSidenavMenu" mat-list-item routerLink="/" (click)="drawer.close()">
+            <i matTooltip="Menu" class="material-icons sidenavMenu">book</i> Produtos
+          </a>
+          <a class="textoSidenavMenu" mat-list-item routerLink="/carrinho" (click)="drawer.close()"
+            *ngIf="(this.perfil == 'cliente' && this.autenticado)">
+            <i matTooltip="Menu" class="material-icons sidenavMenu">shopping_cart</i>
+            <b>Carrinho</b>
+          </a>
+          <a class="textoSidenavMenu" mat-list-item routerLink="/pedidos" (click)="drawer.close()"
+            *ngIf="this.perfil == 'cliente' && this.autenticado">
+            <i matTooltip="Menu" class="material-icons sidenavMenu">reorder</i>
+            <b>Pedidos</b>
+          </a>
+          <a class="textoSidenavMenu" mat-list-item routerLink="admin/clientes/update/{{this.idAuth}}"
+            (click)="drawer.close()" *ngIf="this.perfil == 'cliente' && this.autenticado">
+            <i matTooltip="Clientes" class="material-icons sidenavMenu">perm_identity</i>
+            <b>Meus dados</b>
+          </a>
+        </mat-nav-list>
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center center">
+        <mat-nav-list>
+          <a class="linhaTopo" mat-list-item (click)="drawer.close()"
+            *ngIf="!this.autenticado && this.perfil == 'cliente'">
+            <button mat-raised-button (click)="login()" class="btnEntreHS">
+              Entre
+            </button>
+          </a>
+          <a mat-list-item (click)="drawer.close()" *ngIf="!this.autenticado && this.perfil == 'cliente'">
+            <button (click)="cadastro()" class="btnCadastroHS" mat-stroked-button>
+              Cadastro
+            </button>
+          </a>
+          <a class="linhaTopo" mat-list-item (click)="drawer.close()" *ngIf="this.autenticado">
+            <button (click)="sair()" class="btnSairHS" mat-raised-button>
+              Sair
+            </button>
+          </a>
+        </mat-nav-list>
+      </div>
+    </div>
+  </mat-sidenav>
+  <!-- FIM MENU LATERAL HANDSET-->
+
+  <mat-sidenav-content>
+
+    <mat-toolbar class="toolbar-menu" id="toolbarMenu">
+      <!-- INÍCIO TOLLBAR HANDSET-->
+      <div *ngIf="(isHandset$ | async)" class="divToolbarHS" fxLayout="column" fxLayoutAlign="space-around center">
+        <div fxLayout="row" fxLayoutAlign="space-around center">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+            *ngIf="isHandset$ | async">
+            <mat-icon aria-label="Side nav toggle icon" class="iconeMenu">menu</mat-icon>
+          </button>
+          <mat-toolbar fxLayout="row" fxLayoutAlign="space-between center" *ngIf="isHandset$ | async"
+            class="mat-elevation-z0 toolbarLogoMobile" id="toolbarLogo">
+            <div>
+              <span>
+                <a routerLink="/">
+                  <img class="logoMobile" src="assets/livraria semeador_azul.png" alt="logo">
+                </a>
+              </span>
+            </div>
+            <div *ngIf="this.perfil == 'cliente' && this.autenticado">
+              <a *ngIf="qtdItens != 0" matBadge="{{qtdItens}}" matBadgeOverlap="true" matBadgePosition="after"
+                routerLink="/carrinho">
+                <i matTooltip="Carrinho de compras" class="material-icons">shopping_cart</i>
+              </a>
+            </div>
+          </mat-toolbar>
+        </div>
+        <div>
+          <div class="pesquisaHS" fxLayout="row" fxLayoutAlign="center center">
+            <div class="campoBuscaHS" floatLabel="always" appearance="outline">
+              <input class="inputBuscaHS" [(ngModel)]="textoBusca" placeholder="Pesquisar item" name="busca">
+            </div>
+            <button mat-raised-button class="botaoBuscaHS mat-elevation-z0" matTooltip="Buscar" (click)="buscar()">
+              <i class="material-icons iconeBusca">search</i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+      <!-- FIM TOLLBAR HANDSET-->
+
+      <!-- INICIO DO HEADER -->
+      <div *ngIf="!(isHandset$ | async)" fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+        <!-- TOOLBAR DO LOGO -->
+        <mat-toolbar fxLayout="row" fxLayoutAlign="start center" class="mat-elevation-z0 toolbar-logo">
+          <div>
+            <span>
+              <a routerLink="/">
+                <img class="logoLateral" src="assets/livraria semeador_azul.png" alt="logo">
+              </a>
+            </span>
+          </div>
+        </mat-toolbar>
+        <!-- TOOLBAR MENU -->
+        <mat-toolbar class="menu" fxLayout="column" fxLayoutAlign="center stretch">
+          <div class="pesquisa" fxLayout="row" fxLayoutAlign="center center">
+            <div class="campoBusca" floatLabel="always" appearance="outline">
+              <input class="inputBusca" [(ngModel)]="textoBusca" placeholder="Pesquisar item" name="busca">
+            </div>
+            <button mat-raised-button class="botaoBusca mat-elevation-z0" matTooltip="Buscar" (click)="buscar()">
+              <i class="material-icons iconeBusca">search</i>
+            </button>
+          </div>
+          <div class="divMenu" fxLayout="row" fxLayoutAlign="center center">
+            <div class="itensMenu primeiroItem" *ngIf="this.perfil == 'cliente'">
+              <a routerLink="/">
+                <i matTooltip="Produtos" class="material-icons tamanhoIcone">book</i> Produtos
+              </a>
+            </div>
+            <!-- <div class="itensMenu" *ngIf="this.perfil == 'cliente' && this.autenticado">
+          <a *ngIf="qtdItens != 0" matBadge="{{qtdItens}}" matBadgeOverlap="true" matBadgePosition="after"
+            routerLink="/carrinho">
+            <i matTooltip="Carrinho de compras" class="material-icons tamanhoIcone">shopping_cart</i>
+          </a>
+        </div> -->
+            <div class="itensMenuBarra" *ngIf="this.perfil == 'cliente' && this.autenticado">
+              |
+            </div>
+            <div class="itensMenu" *ngIf="this.perfil == 'cliente' && this.autenticado">
+              <a routerLink="/pedidos">
+                <i matTooltip="Pedidos" class="material-icons tamanhoIcone">reorder</i> Pedidos
+              </a>
+            </div>
+            <div class="itensMenuBarra" *ngIf="this.perfil == 'cliente' && this.autenticado">
+              |
+            </div>
+            <div class="itensMenu" *ngIf="(this.perfil == 'cliente') && this.autenticado">
+              <a routerLink="admin/clientes/update/{{idAuth}}">
+                <i matTooltip="Clientes" class="material-icons tamanhoIcone">perm_identity</i> Meus dados
+              </a>
+            </div>
+            <!-- Começo do menu ADMIN -->
+            <div class="itensMenuAdmin"
+              *ngIf="(this.perfil == 'admin' || this.perfil == 'master' ) && this.autenticado">
+              <a routerLink="/admin/produtos">
+                <i matTooltip="Produtos" class="material-icons tamanhoIcone iconeProdutoAdm">shopping_bag</i>
+              </a>
+            </div>
+            <div class="itensMenuAdmin"
+              *ngIf="(this.perfil == 'admin' || this.perfil == 'master' ) && this.autenticado">
+              <a routerLink="/admin/pedidos">
+                <i matTooltip="Pedidos" class="material-icons tamanhoIcone iconePedidoAdm">receipt</i>
+              </a>
+            </div>
+            <div class="itensMenuAdmin"
+              *ngIf="(this.perfil == 'admin' || this.perfil == 'master' ) && this.autenticado">
+              <a routerLink="/admin/clientes">
+                <i matTooltip="Clientes" class="material-icons tamanhoIcone iconeClienteAdm">perm_identity</i>
+              </a>
+            </div>
+            <div class="itensMenuAdmin" *ngIf="(this.perfil == 'master') && this.autenticado">
+              <a routerLink="/admin/usuarios">
+                <i matTooltip="Usuários" class="material-icons tamanhoIcone iconeUsuarioAdm">manage_accounts</i>
+              </a>
+            </div>
+          </div>
+
+        </mat-toolbar>
+        <mat-toolbar class="menu" fxFlex="5" fxLayout="row" fxLayoutAlign="end center">
+          <div>
+            <a matBadge="{{qtdItens}}" matBadgeOverlap="true" matBadgePosition="above after" routerLink="/carrinho">
+              <i matTooltip="Carrinho de compras" class="material-icons tamanhoIcone">shopping_cart</i>
+            </a>
+          </div>
+        </mat-toolbar>
+        <!-- TOOLBAR CONTATO -->
+        <!-- <mat-toolbar>
+          <div>
+            <i>
+              <img class="logoWhats" src="assets/whatsapp-logo.png" alt="logo">
+            </i>
+
+          </div>
+        </mat-toolbar> -->
+
+        <!-- TOOLBAR BEM VINDO E LOGIN -->
+        <mat-toolbar class="toolbarLogin" fxLayout="row" fxLayoutAlign="end center">
+          <div class="bemVindo" *ngIf="this.autenticado">
+            Bem vindo(a) <b>{{this.nome}}</b>
+          </div>
+          <div *ngIf="!this.autenticado && this.perfil == 'cliente'">
+            <button mat-raised-button (click)="login()" class="espacamento btnLogin">
+              Entre
+            </button>
+            <button (click)="cadastro()" class="espacamento btnCadastro" mat-stroked-button>
+              Cadastro
+            </button>
+          </div>
+          <div *ngIf="this.autenticado">
+            <button (click)="sair()" class="espacamento btnSair" mat-raised-button>
+              Sair
+            </button>
+          </div>
+        </mat-toolbar>
+      </div>
+      <!-- FIM DO HEADER -->
+    </mat-toolbar>
+    <ng-content></ng-content>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

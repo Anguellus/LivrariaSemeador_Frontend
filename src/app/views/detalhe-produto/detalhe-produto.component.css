@@ -1,0 +1,143 @@
+/* mat-card{
+    padding: 0px;
+    margin: 0px;
+} */
+
+.background{
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.cardPrin {
+    /* max-width: 20%; */
+    background-color: white;
+    color: black;
+    padding-left: 20px;
+    padding-top: 10px;
+    /* align-content: center;
+    align-items: center; */
+    /* flex-grow: 1; */
+    /* border-width: 1px;
+    border-color: #DA0037;
+    border-style: solid; */
+    box-sizing: border-box;
+    width: fit-content;  
+  }
+
+.zerado {
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    /* justify-content: space-between;
+    align-content: space-between; */
+    background-color: white;
+    /* border-radius: 0cm;
+    padding-left: 50px; */
+    /* padding-right: 30px; */
+    /* padding-bottom: 30px; */
+  }
+
+.contMin{
+    background-color: white;
+    max-width: 10vh;
+    padding-top: 10px;
+}
+
+.contDados{
+    background-color: white;
+    padding-left: 30px;
+}
+
+.foto{
+    width: 100%;
+    text-align: center;
+}
+
+.miniatura {
+    max-width: 130%;
+    text-align: center;
+    margin-bottom: 35%;
+    /* padding-bottom: 10px; */
+}
+
+.infoProd{
+    color:black
+}
+
+.botao{
+    color: rgb(82,112,255);
+    border-style: solid;
+    border-radius: 20px;
+    border-width: 1px;
+    border-color: rgb(82,112,255);
+    background-color: white;
+}
+
+.espaco{
+    padding-left: 25px;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(82,112,255);
+    color: white;
+    border-radius: 20px;
+  }
+
+  @media (max-width: 786px){
+    .naoHandset{
+        display: none;
+    }    
+  }
+
+  .cardPrinHS {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 2vh;
+    padding-right: 0px;
+    /* border-left: 0px; */
+    /* border-right: 0px; */
+    background-color: white;
+    color: black;
+    padding-top: 10px;
+    box-sizing: border-box;
+    width: fit-content;  
+  }
+
+  .fotoHS{
+    width: 80%;
+    text-align: center;
+}
+
+.miniaturaHS {
+    max-width: 80%;
+    text-align: center;
+}
+
+.backgroundHS{
+    background-color: white;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.contMinHS{
+    margin-top: 10px;
+    background-color: white;
+    max-width: 5vh;
+    padding-top: 10px;
+}
+
+.contDadosHS{
+    background-color: white;
+    padding-left: 10px;
+}
+
+.btnCarrinhoHS{
+    margin-right: 10px;
+}
+  

@@ -1,0 +1,48 @@
+<mat-card class="mat-elevation-z0">
+    <mat-card-title>Trocar senha
+        <i class="material-icons logIcon">
+            lock
+        </i>
+    </mat-card-title>
+    <form [formGroup]="cadastroForm">
+        <input class="senhaBanco" formControlName="senhaAtualBanco" matInput type="password" [(ngModel)]="this.senhaAtualBanco"
+            name="senhaAtualBanco">
+        <mat-form-field floatLabel="always" class="campos" appearance="outline">
+            <mat-label>
+                <i class="material-icons lockIcon">
+                    lock_open
+                </i>Senha atual
+            </mat-label>
+            <input formControlName="senhaAtual" matInput placeholder="Digite sua senha" type="password"
+                [(ngModel)]="this.senhaAtual" name="senhaAtual">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>
+                <i class="material-icons lockIcon">
+                    lock
+                </i>
+                Nova senha
+            </mat-label>
+            <input formControlName="novaSenha" matInput placeholder="Nova senha" type="password"
+                [(ngModel)]="this.password" name="novaSenha">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>
+                <i class="material-icons lockIcon">
+                    lock
+                </i>
+                Repita a senha
+            </mat-label>
+            <input formControlName="confirmaSenha" matInput placeholder="Confirme a senha" type="password"
+                [(ngModel)]="this.checkPassword" name="checkPassword">
+        </mat-form-field>
+    </form>
+    <button [disabled]="!cadastroForm.valid" class="botao" mat-raised-button (click)="trocarSenha()" color="alert">
+        Submeter
+    </button>
+    <p></p>
+    <!-- <button class="botaoCadastro" mat-raised-button (click)="cri()">
+        Cript<p></p> 
+    </button>
+    <span>{{senhaCripto}}</span> -->
+</mat-card>

@@ -1,0 +1,99 @@
+<div class="naoHandset">
+    <div class="background" fxLayout="row" fxLayoutAlign="start start">
+        <mat-card fxFlex=" 0 1  calc (25% - 11px)" fxFlex.lt-md=" 0 1  calc(50% - 11px)"
+            class="cardPrin mat-elevation-z0">
+            <img mat-card-image class="foto" src={{fotoPrincipal}} alt="HB1">
+        </mat-card>
+        <mat-card fxFlex=" 0 1  calc (25% - 11px)" fxFlex.lt-md=" 0 1  calc(50% - 11px)"
+            class="contMin mat-elevation-z0" fxLayout="column" fxLayoutAlign="center start">
+            <img *ngIf="produto.foto != 'na'" mat-card-image (click)="alterarFoto(produto.foto)" class="miniatura"
+                src={{produto.foto}} alt="HB1">
+            <img *ngIf="produto.foto2 != 'na'" mat-card-image (click)="alterarFoto(produto.foto2)" class="miniatura"
+                src={{produto.foto2}} alt="HB1">
+            <img *ngIf="produto.foto3 != 'na'" mat-card-image (click)="alterarFoto(produto.foto3)" class="miniatura"
+                src={{produto.foto3}} alt="HB1">
+            <img *ngIf="produto.foto4 != 'na'" mat-card-image (click)="alterarFoto(produto.foto4)" class="miniatura"
+                src={{produto.foto4}} alt="HB1">
+            <img *ngIf="produto.foto5 != 'na'" mat-card-image (click)="alterarFoto(produto.foto5)" class="miniatura"
+                src={{produto.foto5}} alt="HB1">
+            <img *ngIf="produto.foto6 != 'na'" mat-card-image (click)="alterarFoto(produto.foto6)" class="miniatura"
+                src={{produto.foto6}} alt="HB1">
+        </mat-card>
+        <mat-card fxFlex=" 0 1  calc (25% - 11px)" fxFlex.lt-md=" 0 1  calc(50% - 11px)" fxLayout="column"
+            fxLayoutAlign="center start" class="contDados mat-elevation-z0">
+            <mat-card-content *ngIf="produto.nome != ''" class="infoProd">
+                <b>Nome:</b> {{produto.nome}}
+            </mat-card-content>
+            <mat-card-content class="infoProd">
+                <b>Preço:</b> {{produto.preco | currency: 'BRL' }}
+            </mat-card-content>
+            <mat-card-content *ngIf="produto.resumo != ''" class="infoProd">
+                <b>Descrição:</b> {{produto.resumo}}
+            </mat-card-content>
+            <mat-card-content *ngIf="produto.autor != ''" class="infoProd">
+                <b>Autor:</b> {{produto.autor}}
+            </mat-card-content>
+            <mat-card-actions class="center">
+                <button class="alinhamento" mat-raised-button matTooltip="adicionar ao carrinho"
+                    (click)="incluir(produto._id, produto.nome, produto.preco)">Adicionar ao carrinho
+                    <i class="material-icons">add_shopping_cart</i>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="espaco">
+        <button class="botao" mat-raised-button (click)="voltar()">
+            Voltar
+        </button>
+    </div>
+</div>
+
+<!-- HANDSET -->
+<div *ngIf="(isHandset$ | async)" class="backgroundHS" fxLayout="column" fxLayoutAlign="start start">
+    <div fxLayout="row" fxLayoutAlign="start start">
+        <mat-card fxFlex="80" class="cardPrinHS mat-elevation-z0">
+            <img mat-card-image class="fotoHS" src={{fotoPrincipal}} alt="HB1">
+        </mat-card>
+        <mat-card fxFlex="20" class="contMinHS mat-elevation-z0" fxLayout="column" fxLayoutAlign="center start">
+            <img *ngIf="produto.foto != 'na'" mat-card-image (click)="alterarFoto(produto.foto)" class="miniaturaHS"
+                src={{produto.foto}} alt="HB1">
+            <img *ngIf="produto.foto2 != 'na'" mat-card-image (click)="alterarFoto(produto.foto2)" class="miniaturaHS"
+                src={{produto.foto2}} alt="HB1">
+            <img *ngIf="produto.foto3 != 'na'" mat-card-image (click)="alterarFoto(produto.foto3)" class="miniaturaHS"
+                src={{produto.foto3}} alt="HB1">
+            <img *ngIf="produto.foto4 != 'na'" mat-card-image (click)="alterarFoto(produto.foto4)" class="miniaturaHS"
+                src={{produto.foto4}} alt="HB1">
+            <img *ngIf="produto.foto5 != 'na'" mat-card-image (click)="alterarFoto(produto.foto5)" class="miniaturaHS"
+                src={{produto.foto5}} alt="HB1">
+            <img *ngIf="produto.foto6 != 'na'" mat-card-image (click)="alterarFoto(produto.foto6)" class="miniaturaHS"
+                src={{produto.foto6}} alt="HB1">
+        </mat-card>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="start center">
+        <div>
+            <mat-card fxLayout="column" fxLayoutAlign="center start" class="contDadosHS mat-elevation-z0">
+                <mat-card-content *ngIf="produto.nome != ''" class="infoProd">
+                    <b>Nome:</b> {{produto.nome}}
+                </mat-card-content>
+                <mat-card-content class="infoProd">
+                    <b>Preço:</b> {{produto.preco | currency: 'BRL'}}
+                </mat-card-content>
+                <mat-card-content *ngIf="produto.resumo != ''" class="infoProd">
+                    <b>Descrição:</b> {{produto.resumo}}
+                </mat-card-content>
+                <mat-card-content *ngIf="produto.autor != ''" class="infoProd">
+                    <b>Autor:</b> {{produto.autor}}
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div class="espaco">
+            <button class="alinhamento btnCarrinhoHS" mat-raised-button matTooltip="adicionar ao carrinho"
+                (click)="incluir(produto._id, produto.nome, produto.preco)">Adicionar ao carrinho
+                <i class="material-icons">add_shopping_cart</i>
+            </button>
+            <button class="botao" mat-raised-button (click)="voltar()">
+                Voltar
+            </button>
+        </div>
+    </div>
+</div>

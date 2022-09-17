@@ -1,0 +1,285 @@
+/* input outline color */
+/* ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline { */
+    /* color: lightcoral; */
+     /* opacity: 1!important; */
+  /* } */
+  
+/* mat-input focused color */
+:host  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+color: tomato;
+} 
+
+:host  ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+color: white;
+    /* opacity: 1!important; */
+}
+  
+:host  ::ng-deep .mat-select-panel {
+    background-color: rgb(38, 90, 64);
+    color: black;
+}
+
+:host  ::ng-deep .optProd {
+    background-color: rgb(81, 134, 123);
+    color: black;
+}
+
+.mat-option.mat-selected:not(.mat-option-multiple) {
+    color: white;
+    background-color: rgb(38, 90, 64);
+}
+
+:host  ::ng-deep .mat-select-value {
+    color: white;
+}
+
+:host  ::ng-deep .mat-select-arrow {
+    color: white;
+}
+
+.formaPagamento {
+    padding-left: 2vh;
+    padding-right: 2vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: rgb(106, 155, 130);
+    color: white;
+    border-style: solid;
+    font-weight: normal;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(57, 136, 96);
+}
+
+.formaTxt{
+    padding-bottom: 20vh;
+    margin-bottom: 20vh;
+}
+
+.iconeCliente{
+    font-size: 40px;
+    text-decoration: none;
+    vertical-align: middle;
+}
+
+.iconeProduto{
+    font-size: 40px;
+    vertical-align: middle;
+}
+
+.iconeCarrinho{
+    font-size:40px;
+    vertical-align: middle;
+}
+
+mat-card {
+    /* margin-top: 10px;
+    margin-left: 10px;
+    width: 15%; */
+    font-size: smaller;
+    background-color: white;
+    width: max-content;
+}
+
+.tabela {
+    background-color: rgb(106, 155, 130);
+    width: max-content;
+}
+
+th {
+    text-align: center;
+    vertical-align: middle;
+    color:white;
+    border-bottom-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.center{
+    text-align: center;
+}
+
+td {
+    text-align: center;
+    vertical-align: middle;
+    color:white;
+}
+
+.cardClientes {
+    background-color: rgb(57, 136, 96);
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(57, 136, 96); */
+    color: white;
+}
+
+.cardProdutos{
+    background-color: rgb(81, 134, 123);
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(57, 136, 96); */
+    color: white;
+}
+
+.cardCarrinho{
+    background-color: rgb(106, 155, 130);
+    /* border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+    border-color: rgb(57, 136, 96); */
+    color: white;
+}
+
+mat-label {
+    color: white;
+}
+
+mat-option{
+    color: white;
+}
+
+.black {
+    color: black;
+}
+
+.principal {
+    padding-left: 10px;
+    padding-top: 10px;
+    /* margin-top: 1%;
+    margin-left: 1%; */
+    margin: 2em auto;
+    align-self: center;
+    align-content: center;
+    /* width: 98%; */
+    width: max-content;
+}
+
+.finalizar {
+    background-color: white;
+    color: black;    
+}
+
+.carrinho {
+    min-width: 30%;
+}
+
+mat-card-title {
+    font-size: medium;
+}
+
+.conteudo {
+    padding-bottom: 30px;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 20px;
+    margin-left: 20px;
+    color:white
+}
+
+.alinharBotao{
+    text-align: center;
+    vertical-align: middle;
+}
+
+.botao { 
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+    background-color: white;
+    color: rgb(57, 136, 96);
+}
+
+.botaoFinalizar { 
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+    background-color: rgb(57, 136, 96);
+    color: white;
+}
+
+.botaoVoltar{
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: center;
+    background-color:white;
+    color: rgb(57, 136, 96);
+}
+
+.totalPedido {
+    color: black;
+    font-weight: bold;
+}
+
+.valorTotalPedido {
+    color: rgb(57, 136, 96);
+    font-size: large;
+}
+
+.selectForma{
+    padding-top: 1vh;
+    background-color: rgb(38, 90, 64);
+    border-radius: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.delete {
+    color: red;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.buttonDelete{
+    background-color: white
+}
+
+.textoFaixa{
+    /* width: 100vh; */
+    font-size: x-large;
+    color: rgb(57, 136, 96);
+    /* border-bottom-style: solid; */
+    /* border-bottom-width: 1px; */
+    background-color: lightgray;
+    padding-left: 100vh;
+    padding-right: 100vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    align-items: center;
+    /* margin-right: 4vh; */
+    /* background-color: lightgrey; */
+    border-radius: 5px;
+    border-color: lightgray; 
+    /* border-bottom-color: rgb(57, 136, 96); */
+}
+
+.iconeFaixa {
+    font-size: 40px;
+    color: black;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    background-color: none;
+}
+
+.faixaItem{
+    /* padding-top: 2vh; */
+    background-color: none;
+    height: 5vh;
+    font-weight: 500;
+    /* margin-left: 2vh; */
+    color: rgb(57, 136, 96);
+    vertical-align: middle;
+    text-align: center;
+    font-size: x-large;
+}

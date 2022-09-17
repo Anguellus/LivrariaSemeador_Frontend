@@ -1,0 +1,79 @@
+table {
+    width: 98%;
+    margin-top: 10px;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: #343F56;
+}
+
+.conteudo {
+    padding-bottom: 30px;
+}
+
+.botao { 
+    margin-top: 10px;
+    margin-left: 13px;
+    border-radius: 20px;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    background-color: #343F56;
+    /* border-style: solid;
+    border-width: 1px; */
+    border-color: white;
+    color: white;
+}
+
+.edit > i {
+    margin-right:10px;
+}
+
+.edit > i {
+    color: #d9cd26;
+}
+
+.delete > i {
+    color: #ff6e7d
+}
+
+
+.textoFaixa{
+    /* width: 100vh; */
+    font-size: x-large;
+    color: #343F56;
+    /* border-bottom-style: solid; */
+    /* border-bottom-width: 1px; */
+    background-color: lightgray;
+    padding-left: 100vh;
+    padding-right: 100vh;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    align-items: center;
+    /* margin-right: 4vh; */
+    /* background-color: lightgrey; */
+    border-radius: 5px;
+    border-color: lightgray; 
+    /* border-bottom-color: rgb(57, 136, 96); */
+}
+
+.iconeFaixa {
+    font-size: 40px;
+    color: black;
+}
+
+.alinhamento {
+    text-align: center;
+    vertical-align: middle;
+    background-color: none;
+}
+
+.faixaItem{
+    /* padding-top: 2vh; */
+    background-color: none;
+    height: 5vh;
+    font-weight: 500;
+    /* margin-left: 2vh; */
+    color: #343F56;
+    vertical-align: middle;
+    text-align: center;
+    font-size: x-large;
+}

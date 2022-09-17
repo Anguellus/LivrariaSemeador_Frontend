@@ -1,0 +1,43 @@
+<mat-card class="mat-elevation-z0">
+    <mat-card-title>Login
+        <i class="material-icons logIcon">
+            person_outline
+        </i>
+    </mat-card-title>
+    <form [formGroup]="cadastroForm">
+        <mat-form-field floatLabel="always" class="campos" appearance="outline">
+            <mat-label>
+                <i class="material-icons lockIcon">
+                    person_outline
+                </i>CPF
+            </mat-label>
+            <input formControlName="CPF" matInput placeholder="Digite seu CPF" [(ngModel)]="usuarioForm.cpf" name="cpf">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label> 
+                <i class="material-icons lockIcon">
+                    lock
+                </i>
+                Senha
+            </mat-label>
+            <input formControlName="senha" matInput placeholder="Senha" type="password" [(ngModel)]="usuarioForm.password" name="senha">
+        </mat-form-field>
+    </form>
+    <button [disabled]="!cadastroForm.valid" class="botao" mat-raised-button (click)="login()" color="alert">
+        Log in
+    </button>
+    <p></p>
+    <!-- <button class="botaoCadastro" mat-raised-button (click)="cadastro()">
+        Cadastro
+    </button> -->
+    <a routerLink="/cadastro" class="recuperarSenha">
+        Cadastro
+    </a>
+    <a routerLink="/recuperarSenha" class="recuperarSenha">
+        esqueci minha senha
+    </a>
+    <!-- <button class="botaoCadastro" mat-raised-button (click)="cri()">
+        Cript<p></p> 
+    </button>
+    <span>{{senhaCripto}}</span> -->
+</mat-card>

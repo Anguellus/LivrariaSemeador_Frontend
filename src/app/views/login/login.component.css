@@ -1,0 +1,117 @@
+
+/* mat-input focused color */
+:host  ::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color:#87406C
+    } 
+    
+:host ::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+color: rgb(82,112,255);
+    /* opacity: 1!important; */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.botao { 
+    /* margin-top: 10px; */
+    width: 100%;
+    /* margin-le    ft: 10px; */
+    background-color: rgb(82,112,255);
+    /* border-style: solid;
+    border-width: 1px;
+    border-color: #DA0037; */
+    border-radius: 20px;
+    color: white;
+}
+
+.botao:disabled { 
+    /* margin-top: 10px; */
+    width: 100%;
+    /* margin-le    ft: 10px; */
+    background-color: rgb(16, 45, 189);
+    /* border-style: solid;
+    border-width: 1px;
+    border-color: #DA0037; */
+    border-radius: 20px;
+    color: white;
+}
+
+.botaoCadastro { 
+    /* margin-top: 10px; */
+    margin-left: 10px;
+    background-color: rgb(190, 190, 190);
+    /* border-style: solid;
+    border-width: 1px;
+    border-color: rgb(126, 126, 126); */
+    color: black;
+    border-radius: 20px;
+    
+}
+
+input::placeholder {
+    color:  rgb(82,112,255);
+    background-color: none;
+}
+
+.cardPrincipal{
+    max-width: 100%;
+    border-style: none;
+}
+
+mat-card {
+    max-width: 30%;
+    margin: 5em auto;
+    text-align: center;
+    background-color: white;
+    /* box-shadow: 60px -16px teal */
+    color: rgb(82,112,255);
+    border-color: rgb(82,112,255);
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+@media (max-width: 786px){
+    mat-card {
+        color: rgb(82,112,255);
+        font-size: larger;  
+        max-width: 90%;
+        margin: 1em;
+        /* margin-top: 3vh; */
+        text-align: center;
+        background-color: white;
+        /* box-shadow: 60px -16px teal */
+    }
+}
+
+mat-form-field {
+    display: block;
+}
+
+mat-label {
+    color: rgb(82,112,255);
+}
+
+.recuperarSenha{
+    text-decoration: underline;
+    color: #87406C;
+    font-weight: bold;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+}
+
+.logIcon{
+    vertical-align: middle;
+    font-size: 40px;
+    font-weight: 100; 
+}
+
+.lockIcon{
+    vertical-align: middle;
+    font-size: 20px;
+    font-weight: 100; 
+}

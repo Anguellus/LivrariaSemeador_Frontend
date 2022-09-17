@@ -1,0 +1,92 @@
+.container {
+    background-color: tomato;
+}
+
+.logoWhats {
+    width: 4vh;
+    padding-right: 10px;
+}
+
+.logo {
+    width: 11vh;
+    align-items: left;
+    align-content: flex-start;
+    padding-top: 9px;
+    margin-left: 0;
+}
+
+mat-toolbar, div {
+    background: #Da0037;
+    display: flex;
+    align-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    color: white;
+}
+
+/* .toolbar-logo {
+    flex
+} */
+
+.toolbar-menu {
+    display: flex;
+    padding-top: 5px;
+}
+
+.toolbar-contato{
+    vertical-align: center;
+}
+
+
+@media only screen and (min-width : 1000px){
+    .toolbar-menu{
+        display: none;
+    }
+    .logo {
+        width: 10vh;
+    }
+    .logoWhats {
+        width: 2vh;
+    }
+
+    .toolbar-contato{
+        display: none;
+    }
+
+}
+
+.tamanhoIcone {
+    font-size: 35px;
+}
+
+.primeiroItem {
+    padding-left: 20px;
+}
+
+.itensMenu {
+    padding-right: 20px;
+}
+
+.itensMenuAdmin {
+    padding-right: 20px;
+}
+
+.bemVindo {
+    margin-right: 10px;
+}
+
+.espacamento{
+    margin-right: 20px;
+}
+
+.toolbar-login{
+    padding-right: 20px;
+}
+
+.btnColor {
+    color: white;
+}

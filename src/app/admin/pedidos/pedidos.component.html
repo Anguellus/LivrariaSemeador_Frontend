@@ -1,0 +1,50 @@
+<div class="faixaItem">
+    <span class="textoFaixa"><strong>Pedidos</strong>
+        <!-- <i class="material-icons iconeFaixa alinhamento">
+            shopping_cart
+        </i> -->
+    </span>
+</div>
+
+<button class="botao" mat-raised-button (click)="navigateToPedidoCreate()" color="primary">
+    Criar pedido
+</button>
+<div class="conteudo">
+    <table class="alinhamento" *ngIf="pedidos.length == 0">
+        <th></th>
+        <td><strong>Não existem pedidos realizados.</strong></td>
+    </table>
+
+    <table *ngIf="pedidos.length != 0" mat-table [dataSource]="pedidos">
+
+        <ng-container matColumnDef="numero">
+            <th mat-header-cell *matHeaderCellDef>Número do pedido</th>
+            <td mat-cell *matCellDef="let row">
+                <a routerLink="/admin/pedidos/detalhe/{{ row._id }}">{{row._id}}</a>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="total_pedido">
+            <th mat-header-cell *matHeaderCellDef>Valor total</th>
+            <td mat-cell *matCellDef="let row">{{row.totalPedido | currency: 'BRL'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataPedido">
+            <th mat-header-cell *matHeaderCellDef>Data do pedido</th>
+            <td mat-cell *matCellDef="let row">{{row.dataPedido | date : 'dd/MM/yyyy HH:mm'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataEntrega">
+            <th mat-header-cell *matHeaderCellDef>Data de entega</th>
+            <td mat-cell *matCellDef="let row">{{row.dataEntrega | date : 'dd/MM/yyyy HH:mm'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef>Status</th>
+            <td mat-cell *matCellDef="let row">{{row.status}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+</div>

@@ -1,0 +1,30 @@
+<mat-card class="mat-elevation-z2">
+    <mat-card-title>Atualizar usuário</mat-card-title>
+    <form fxLayout="row wrap" fxLayoutGap="20px">
+        <mat-form-field appearance="outline">
+            <mat-label>Nome</mat-label>
+            <input matInput placeholder="Nome" [(ngModel)]="usuario.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Usuário</mat-label>
+            <input matInput placeholder="Usuário" [(ngModel)]="usuario.usuario" name="usuario">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Perfil Master</mat-label>
+            <mat-select placeholder="Master" [(value)]="usuario.master">
+                <mat-option value=false>Não</mat-option>
+                <mat-option value=true>Sim</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Senha</mat-label>
+            <input type="password" matInput placeholder="Senha" [(ngModel)]="usuario.password" name="password">
+        </mat-form-field>
+    </form>
+    <button class="cancelar" mat-stroked-button (click)="cancelar()">
+        Cancelar
+    </button>
+    <button class="atualizar" mat-raised-button (click)="updateUsuario()">
+        Atualizar
+    </button>
+</mat-card>

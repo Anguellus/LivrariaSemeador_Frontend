@@ -1,0 +1,82 @@
+<div class="faixaItem">
+    <span class="textoFaixa"><strong>Atualizar produto</strong>
+        <!-- <i class="material-icons iconeFaixa alinhamento">
+            shopping_cart
+        </i> -->
+    </span>
+</div>
+
+<mat-card  class="container card mat-elevation-z0">
+    <!-- <mat-card-title>Atualizar produto</mat-card-title> -->
+    <mat-card-content>
+        <form>
+            <mat-form-field floatLabel="always" appearance="outline">
+                <mat-label>Código de cobrança</mat-label>
+                <input matInput placeholder="Código de cobrança" [(ngModel)]="produto.idCobranca" name="idCobranca">
+            </mat-form-field>
+            <mat-form-field floatLabel="always" appearance="outline">
+                <mat-label>Nome</mat-label>
+                <input matInput placeholder="Nome" [(ngModel)]="produto.nome" name="nome">
+            </mat-form-field>
+            <mat-form-field floatLabel="always" appearance="outline">
+                <mat-label>Preço</mat-label>
+                <input type="number" matInput placeholder="Preço (R$)" [(ngModel)]="produto.preco" name="preco">
+            </mat-form-field>
+            <mat-form-field floatLabel="always" appearance="outline">
+                <mat-label>Estoque</mat-label>
+                <input type="number" matInput placeholder="Estoque" [(ngModel)]="produto.estoque" name="estoque">
+            </mat-form-field>
+            <mat-form-field class="descricao" floatLabel="always" appearance="outline">
+                <mat-label>Resumo</mat-label>
+                <input matInput placeholder="Resumo" [(ngModel)]="produto.resumo" name="resumo">
+            </mat-form-field>
+            <mat-form-field floatLabel="always" appearance="outline">
+                <mat-label>Autor</mat-label>
+                <input matInput placeholder="Autor" [(ngModel)]="produto.autor" name="autor">
+            </mat-form-field>
+            <mat-slide-toggle [(ngModel)]="produto.ativo">Produto ativo: {{produto.ativo}}</mat-slide-toggle>
+        </form>
+    </mat-card-content>
+
+    <mat-card-content>
+        <div>
+            <label for="foto">Selecione a foto: </label>
+            <input class="inputFoto" #fileInput (change)="onChangeFoto(fileInput.files)" type="file" name="Foto"
+                id="Foto">
+        </div>
+        <div>
+            <label for="Foto2">Selecione a foto: </label>
+            <input class="inputFoto" #fileInputFoto2 (change)="onChangeFoto2(fileInputFoto2.files)" type="file"
+                name="Foto2" id="Foto2">
+        </div>
+        <div>
+            <label for="Foto3">Selecione a foto: </label>
+            <input class="inputFoto" #fileInputFoto3 (change)="onChangeFoto3(fileInputFoto3.files)" type="file"
+                name="Foto3" id="Foto3">
+        </div>
+        <div>
+            <label for="Foto4">Selecione a foto: </label>
+            <input class="inputFoto" #fileInputFoto4 (change)="onChangeFoto4(fileInputFoto4.files)" type="file"
+                name="Foto4" id="Foto4">
+        </div>
+        <div>
+            <label for="Foto5">Selecione a foto: </label>
+            <input class="inputFoto" #fileInputFoto5 (change)="onChangeFoto5(fileInputFoto5.files)" type="file"
+                name="Foto5" id="Foto5">
+        </div>
+        <div>
+            <label for="Foto6">Selecione a foto: </label>
+            <input class="inputFoto" #fileInputFoto6 (change)="onChangeFoto6(fileInputFoto6.files)" type="file"
+                name="Foto6" id="Foto6">
+        </div>
+    </mat-card-content>
+    <p></p>
+    <mat-card-content class="containerBtn">
+        <button class="botaoCancel" mat-raised-button (click)="cancel()">
+            Cancelar
+        </button>
+        <button class="botaoOk" mat-raised-button (click)="updateProduto()" color="primary">
+            Salvar
+        </button>
+    </mat-card-content>
+</mat-card>

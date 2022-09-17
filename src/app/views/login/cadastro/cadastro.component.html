@@ -1,0 +1,80 @@
+<mat-card class="mat-elevation-z0">
+    <mat-card-title>
+        <strong>Cadastro</strong>
+        <i class="material-icons addPersonIcon">
+            person_add
+        </i>
+    </mat-card-title>
+    <form [formGroup]="cadastroForm" fxLayout="row wrap" fxLayoutGap="20px">
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>Nome
+                <i class="material-icons iconeForm">
+                    perm_identity
+                </i>
+            </mat-label>
+            <input formControlName="nome" matInput [(ngModel)]="usuario.nome" name="nome">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>Sobrenome
+                <i class="material-icons iconeForm">
+                    perm_identity
+                </i>
+            </mat-label>
+            <input formControlName="sobrenome" matInput [(ngModel)]="usuario.sobrenome" name="sobrenome">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline" class="email">
+            <mat-label>e-mail
+                <i class="material-icons iconeForm">
+                    email
+                </i>
+            </mat-label>
+            <input formControlName="email" type="email" matInput [(ngModel)]="usuario.email" name="email">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>CPF
+                <i class="material-icons iconeForm">
+                    123
+                </i>
+            </mat-label>
+            <input formControlName="CPF" matInput [(ngModel)]="usuario.CPF" name="CPF">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline" class="endereco">
+            <mat-label>Endereço
+                <i class="material-icons iconeForm">
+                    home_work
+                </i>
+            </mat-label>
+            <input formControlName="endereco" matInput [(ngModel)]="usuario.endereco" name="endereco">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>Telefone
+                <i class="material-icons iconeForm">
+                    phone
+                </i>
+            </mat-label>
+            <input formControlName="telefone" matInput [(ngModel)]="usuario.telefone" name="telefone">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>Senha
+                <i class="material-icons iconeForm">
+                    lock_open
+                </i>
+            </mat-label>
+            <input formControlName="novaSenha" matInput type="password" [(ngModel)]="usuario.password" name="password">
+        </mat-form-field>
+        <mat-form-field floatLabel="always" appearance="outline">
+            <mat-label>Repita a senha
+                <i class="material-icons iconeForm">
+                    lock
+                </i>
+            </mat-label>
+            <input formControlName="checkPassword" matInput type="password" [(ngModel)]="checkPass" name="checkPass">
+        </mat-form-field>
+    </form>
+    <button class="botao" [disabled]="!cadastroForm.valid" mat-raised-button (click)="createUser()">
+        Cadastrar
+    </button>
+    <button class="cancelar" mat-stroked-button (click)="cancelar()">
+        Cancelar
+    </button>
+</mat-card>
